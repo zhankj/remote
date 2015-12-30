@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmWebserviceLogMapper">
+	<resultMap id="BaseResultMap"
+		type="cn.cttic.sysframe.frame.domain.SmWebserviceLog">
+		<result column="CHANNEL" property="channel" jdbcType="VARCHAR" />
+		<result column="SID" property="sid" jdbcType="VARCHAR" />
+		<result column="LOCALE" property="locale" jdbcType="VARCHAR" />
+		<result column="SERVICE_CODE" property="serviceCode" jdbcType="VARCHAR" />
+		<result column="START_DATE" property="startDate" jdbcType="TIMESTAMP" />
+		<result column="END_DATE" property="endDate" jdbcType="TIMESTAMP" />
+		<result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="STATUS_CODE" property="statusCode" jdbcType="VARCHAR" />
+		<result column="STATUS_DESC" property="statusDesc" jdbcType="VARCHAR" />
+	</resultMap>
+	<resultMap id="ResultMapWithBLOBs"
+		type="cn.cttic.sysframe.frame.domain.SmWebserviceLogWithBLOBs"
+		extends="BaseResultMap">
+		<result column="EXCEPTION_DESC" property="exceptionDesc"
+			jdbcType="CLOB" />
+		<result column="REQ_MESSAGE" property="reqMessage" jdbcType="CLOB" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		CHANNEL, SID, LOCALE, SERVICE_CODE, START_DATE, END_DATE, CREATE_DATE,
+		STATUS_CODE,
+		STATUS_DESC
+	</sql>
+	<sql id="Blob_Column_List">
+		EXCEPTION_DESC, REQ_MESSAGE
+	</sql>
+	<select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs"
+		parameterType="cn.cttic.sysframe.frame.domain.SmWebserviceLogExample">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		,
+		<include refid="Blob_Column_List" />
+		from SM_WEBSERVICE_LOG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmWebserviceLogExample">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_WEBSERVICE_LOG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<delete id="deleteByExample"
+		parameterType="cn.cttic.sysframe.frame.domain.SmWebserviceLogExample">
+		delete from SM_WEBSERVICE_LOG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert"
+		parameterType="cn.cttic.sysframe.frame.domain.SmWebserviceLogWithBLOBs">
+		insert into SM_WEBSERVICE_LOG (CHANNEL, SID, LOCALE,
+		SERVICE_CODE, START_DATE, END_DATE,
+		CREATE_DATE, STATUS_CODE, STATUS_DESC,
+		EXCEPTION_DESC, REQ_MESSAGE)
+		values (#{channel,jdbcType=VARCHAR}, #{sid,jdbcType=VARCHAR},
+		#{locale,jdbcType=VARCHAR},
+		#{serviceCode,jdbcType=VARCHAR}, #{startDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP},
+		#{createDate,jdbcType=TIMESTAMP}, #{statusCode,jdbcType=VARCHAR},
+		#{statusDesc,jdbcType=VARCHAR},
+		#{exceptionDesc,jdbcType=CLOB}, #{reqMessage,jdbcType=CLOB})
+	</insert>
+	<insert id="insertSelective"
+		parameterType="cn.cttic.sysframe.frame.domain.SmWebserviceLogWithBLOBs">
+		insert into SM_WEBSERVICE_LOG_${YYYYMM}
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="channel != null">
+				CHANNEL,
+			</if>
+			<if test="sid != null">
+				SID,
+			</if>
+			<if test="locale != null">
+				LOCALE,
+			</if>
+			<if test="serviceCode != null">
+				SERVICE_CODE,
+			</if>
+			<if test="startDate != null">
+				START_DATE,
+			</if>
+			<if test="endDate != null">
+				END_DATE,
+			</if>
+			<if test="createDate != null">
+				CREATE_DATE,
+			</if>
+			<if test="statusCode != null">
+				STATUS_CODE,
+			</if>
+			<if test="statusDesc != null">
+				STATUS_DESC,
+			</if>
+			<if test="exceptionDesc != null">
+				EXCEPTION_DESC,
+			</if>
+			<if test="reqMessage != null">
+				REQ_MESSAGE,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="channel != null">
+				#{channel,jdbcType=VARCHAR},
+			</if>
+			<if test="sid != null">
+				#{sid,jdbcType=VARCHAR},
+			</if>
+			<if test="locale != null">
+				#{locale,jdbcType=VARCHAR},
+			</if>
+			<if test="serviceCode != null">
+				#{serviceCode,jdbcType=VARCHAR},
+			</if>
+			<if test="startDate != null">
+				#{startDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="endDate != null">
+				#{endDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="statusCode != null">
+				#{statusCode,jdbcType=VARCHAR},
+			</if>
+			<if test="statusDesc != null">
+				#{statusDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="exceptionDesc != null">
+				#{exceptionDesc,jdbcType=CLOB},
+			</if>
+			<if test="reqMessage != null">
+				#{reqMessage,jdbcType=CLOB},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample"
+		parameterType="cn.cttic.sysframe.frame.domain.SmWebserviceLogExample"
+		resultType="java.lang.Integer">
+		select count(*) from SM_WEBSERVICE_LOG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update SM_WEBSERVICE_LOG
+		<set>
+			<if test="record.channel != null">
+				CHANNEL = #{record.channel,jdbcType=VARCHAR},
+			</if>
+			<if test="record.sid != null">
+				SID = #{record.sid,jdbcType=VARCHAR},
+			</if>
+			<if test="record.locale != null">
+				LOCALE = #{record.locale,jdbcType=VARCHAR},
+			</if>
+			<if test="record.serviceCode != null">
+				SERVICE_CODE = #{record.serviceCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.startDate != null">
+				START_DATE = #{record.startDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.endDate != null">
+				END_DATE = #{record.endDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.createDate != null">
+				CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.statusCode != null">
+				STATUS_CODE = #{record.statusCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.statusDesc != null">
+				STATUS_DESC = #{record.statusDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="record.exceptionDesc != null">
+				EXCEPTION_DESC = #{record.exceptionDesc,jdbcType=CLOB},
+			</if>
+			<if test="record.reqMessage != null">
+				REQ_MESSAGE = #{record.reqMessage,jdbcType=CLOB},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExampleWithBLOBs" parameterType="map">
+		update SM_WEBSERVICE_LOG
+		set CHANNEL = #{record.channel,jdbcType=VARCHAR},
+		SID = #{record.sid,jdbcType=VARCHAR},
+		LOCALE = #{record.locale,jdbcType=VARCHAR},
+		SERVICE_CODE = #{record.serviceCode,jdbcType=VARCHAR},
+		START_DATE = #{record.startDate,jdbcType=TIMESTAMP},
+		END_DATE = #{record.endDate,jdbcType=TIMESTAMP},
+		CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+		STATUS_CODE = #{record.statusCode,jdbcType=VARCHAR},
+		STATUS_DESC = #{record.statusDesc,jdbcType=VARCHAR},
+		EXCEPTION_DESC = #{record.exceptionDesc,jdbcType=CLOB},
+		REQ_MESSAGE = #{record.reqMessage,jdbcType=CLOB}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update SM_WEBSERVICE_LOG
+		set CHANNEL = #{record.channel,jdbcType=VARCHAR},
+		SID = #{record.sid,jdbcType=VARCHAR},
+		LOCALE = #{record.locale,jdbcType=VARCHAR},
+		SERVICE_CODE = #{record.serviceCode,jdbcType=VARCHAR},
+		START_DATE = #{record.startDate,jdbcType=TIMESTAMP},
+		END_DATE = #{record.endDate,jdbcType=TIMESTAMP},
+		CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+		STATUS_CODE = #{record.statusCode,jdbcType=VARCHAR},
+		STATUS_DESC = #{record.statusDesc,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+</mapper>

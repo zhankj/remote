@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- MySQL driver.jar 
+	<classPathEntry location="C:/Users/dong/.m2/repository/mysql/mysql-connector-java/5.1.26/mysql-connector-java-5.1.26.jar"/> -->
+	<!-- Oracle driver.jar-->
+
+	<context id="DatabaseTables" targetRuntime="MyBatis3">
+		<!--  替换Example类名
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Criteria" />
+		</plugin>
+		-->
+		<!-- 当设置为false时，会对每个mapper的元素产生时间戳，便于合并代码 -->
+		<!-- 当设置为true时，剔除了时间戳，不能合并代码，在重新生成时，xml文件会被追加生成 -->
+		<!-- 此处设置为false -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<!-- MySQL datalink 
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+			connectionURL="jdbc:mysql://localhost:3306/portal" userId="root" password="root"> 
+		</jdbcConnection> 
+		<property name="rootClass" value="cn.cttic.wtms.order.domain.base.BaseEntity" />
+		-->
+		<!-- Oracle datalink -->
+		<jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@10.0.0.42:1521:orcl" userId="APPROVAL" password="APPROVAL">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="cn.cttic.wtms.common.business.domain"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+			
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="cn.cttic.wtms.common.business.dao"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+  
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.cttic.wtms.common.business.dao" targetProject="src\main\java">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!-- 
+	    <table tableName="AID_ENT_LICENSE_FILING" domainObjectName="AidEntLicenseFiling">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="AID_ENT_MGMT_SHIP_INFO" domainObjectName="AidEntMgmtShipInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="CARGO_TYPE" domainObjectName="CargoType">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="CHECK_RECORD" domainObjectName="CheckRecord">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="CONTAINER_VOL_REPO" domainObjectName="ContainerVolRepo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+
+	    <table tableName="ENT_ACCIDENTS" domainObjectName="EntAccidents">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_AUDIT" domainObjectName="EntAudit">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_BIZ_SCOPE" domainObjectName="EntBizScope">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_CONTACT_AGENCY" domainObjectName="EntContactAgency">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_INFO" domainObjectName="EntInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_INT_PROXY_FILING" domainObjectName="EntIntProxyFiling">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_INT_SHIP_FILING" domainObjectName="EntIntShipFiling">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_INVESTOR" domainObjectName="EntInvestor">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_LINER_INVEST_AGREEMENT" domainObjectName="EntLinerInvestAgreement">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_LINER_PRICE" domainObjectName="EntLinerPrice">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_LINER_PRICE_SURCHARGE" domainObjectName="EntLinerPriceSurcharge">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_LINER_ROUTE" domainObjectName="EntLinerRoute">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_LINER_ROUTE_SHIP" domainObjectName="EntLinerRouteShip">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_NO_SHIP_TRANSPORT" domainObjectName="EntNoShipTransport">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_PARENT_COMPANY" domainObjectName="EntParentCompany">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_PARENT_COMPANY_BIZ" domainObjectName="EntParentCompanyBiz">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_SHIP_CAPACITY" domainObjectName="EntShipCapacity">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_SHIP_SVC_COMPANY" domainObjectName="EntShipSvcCompany">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_SHIP_SVC_COM_BRANCH" domainObjectName="EntShipSvcComBranch">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_STAFF" domainObjectName="EntStaff">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ENT_VOLUME_REPORT" domainObjectName="EntVolumeReport">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="IRREGULAR_SHIP_VOL_REPO" domainObjectName="IrregularShipVolRepo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="MARKET_SITUATION" domainObjectName="MarketSituation">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="MARKET_SITUATION_RST" domainObjectName="MarketSituationRst">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>     	    
+	    <table tableName="TRAFFIC_RECORD" domainObjectName="TrafficRecord">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="VOLUME_PRICE_DEF" domainObjectName="VolumePriceDef">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="VOLUME_PRICE_INFO" domainObjectName="VolumePriceInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="VOLU_CONTAINER" domainObjectName="VoluContainer">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="VOLU_ENT_INFO" domainObjectName="VoluEntInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="VOLU_IRRE_SHIP" domainObjectName="VoluIrreShip">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="VOLU_PRICE_INFO" domainObjectName="VoluPriceInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="VOLU_RIDERSHIP" domainObjectName="VoluRidership">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="VOLU_SHIP" domainObjectName="VoluShip">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	       <table tableName="VOLU_SHIP_COUNT" domainObjectName="VoluShipCount">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+     
+	    <table tableName="DOC_INFO" domainObjectName="DocInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    -->
+	    
+	    <table tableName="ENT_BIZ_SCOPE" domainObjectName="EntBizScope">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    
+	    <table tableName="ENT_BRANCH" domainObjectName="EntBranch">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    
+	    <table tableName="ENT_LINER_PRICE" domainObjectName="EntLinerPrice">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    
+		</context>
+</generatorConfiguration>

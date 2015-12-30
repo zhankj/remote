@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmSysDictMapper">
+	<resultMap id="BaseResultMap" type="cn.cttic.sysframe.frame.domain.SmSysDict">
+		<result column="TYPE_CODE" property="typeCode" jdbcType="VARCHAR" />
+		<result column="TYPE_PARAM_CODE" property="paramCode" jdbcType="VARCHAR" />
+		<result column="TYPE_PARAM_DESC" property="paramDesc" jdbcType="VARCHAR" />
+		<result column="PARENT_TYPE_CODE" property="parentTypeCode"
+			jdbcType="VARCHAR" />
+		<result column="PARENT_PARAM_CODE" property="parentParamCode"
+			jdbcType="VARCHAR" />
+		<result column="LANGUAGE_TYPE" property="languageType"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		TYPE_CODE, TYPE_PARAM_CODE, TYPE_PARAM_DESC, PARENT_TYPE_CODE,
+		PARENT_PARAM_CODE,LANGUAGE_TYPE
+	</sql>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmSysDictCriteria">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_SYS_DICT
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<delete id="deleteByExample" parameterType="cn.cttic.sysframe.frame.domain.SmSysDictCriteria">
+		delete from SM_SYS_DICT
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert" parameterType="cn.cttic.sysframe.frame.domain.SmSysDict">
+		insert into SM_SYS_DICT (TYPE_CODE, TYPE_PARAM_CODE, TYPE_PARAM_DESC,
+		PARENT_TYPE_CODE, PARENT_PARAM_CODE)
+		values (#{typeCode,jdbcType=VARCHAR}, #{paramCode,jdbcType=VARCHAR},
+		#{paramDesc,jdbcType=VARCHAR},
+		#{parentTypeCode,jdbcType=VARCHAR}, #{parentParamCode,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="cn.cttic.sysframe.frame.domain.SmSysDict">
+		insert into SM_SYS_DICT
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="typeCode != null">
+				TYPE_CODE,
+			</if>
+			<if test="paramCode != null">
+				TYPE_PARAM_CODE,
+			</if>
+			<if test="paramDesc != null">
+				TYPE_PARAM_DESC,
+			</if>
+			<if test="parentTypeCode != null">
+				PARENT_TYPE_CODE,
+			</if>
+			<if test="parentParamCode != null">
+				PARENT_PARAM_CODE,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="typeCode != null">
+				#{typeCode,jdbcType=VARCHAR},
+			</if>
+			<if test="paramCode != null">
+				#{paramCode,jdbcType=VARCHAR},
+			</if>
+			<if test="paramDesc != null">
+				#{paramDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="parentTypeCode != null">
+				#{parentTypeCode,jdbcType=VARCHAR},
+			</if>
+			<if test="parentParamCode != null">
+				#{parentParamCode,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample" parameterType="cn.cttic.sysframe.frame.domain.SmSysDictCriteria"
+		resultType="java.lang.Integer">
+		select count(*) from SM_SYS_DICT
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+
+	<!-- 自定义 -->
+	<select id="selectByRootTypeCode" parameterType="map" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from (
+		select * from SM_SYS_DICT where type_code in
+		(
+		select type_code from SM_PARAM_DEFINE start with type_code = #{typeCode}
+		connect by prior TYPE_CODE = PARENT_TYPE_CODE
+		)
+		)
+		start with parent_param_code is null connect by prior type_param_code =
+		parent_param_code;
+	</select>
+
+	<update id="updateByExampleSelective" parameterType="map">
+		update SM_SYS_DICT
+		<set>
+			<if test="record.typeCode != null">
+				TYPE_CODE = #{record.typeCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.paramCode != null">
+				TYPE_PARAM_CODE = #{record.paramCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.paramDesc != null">
+				TYPE_PARAM_DESC = #{record.paramDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="record.parentTypeCode != null">
+				PARENT_TYPE_CODE = #{record.parentTypeCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.parentParamCode != null">
+				PARENT_PARAM_CODE = #{record.parentParamCode,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update SM_SYS_DICT
+		set TYPE_CODE = #{record.typeCode,jdbcType=VARCHAR},
+		TYPE_PARAM_CODE = #{record.paramCode,jdbcType=VARCHAR},
+		TYPE_PARAM_DESC = #{record.paramDesc,jdbcType=VARCHAR},
+		PARENT_TYPE_CODE = #{record.parentTypeCode,jdbcType=VARCHAR},
+		PARENT_PARAM_CODE = #{record.parentParamCode,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+</mapper>

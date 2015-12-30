@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmTimerTaskDefMapper">
+	<resultMap id="BaseResultMap" type="cn.cttic.sysframe.frame.domain.SmTimerTaskDef">
+		<id column="TASK_ID" property="taskId" jdbcType="DECIMAL" />
+		<result column="TASK_NAME" property="taskName" jdbcType="VARCHAR" />
+		<result column="TASK_DESC" property="taskDesc" jdbcType="VARCHAR" />
+		<result column="TASK_TYPE" property="taskType" jdbcType="DECIMAL" />
+		<result column="PERIOD_TYPE" property="periodType" jdbcType="DECIMAL" />
+		<result column="SYNC_TIME_FORMAT" property="syncTimeFormat"
+			jdbcType="VARCHAR" />
+		<result column="RUN_TIME_INTERVAL" property="runTimeInterval"
+			jdbcType="DECIMAL" />
+		<result column="RUN_NUM" property="runNum" jdbcType="DECIMAL" />
+		<result column="IMPL_TYPE" property="implType" jdbcType="DECIMAL" />
+		<result column="IMPL_METH" property="implMeth" jdbcType="VARCHAR" />
+		<result column="IMPL_EXTRA_PARAM" property="implExtraParam"
+			jdbcType="VARCHAR" />
+		<result column="TASK_CREATOR" property="taskCreator" jdbcType="VARCHAR" />
+		<result column="SYSTEM_ID" property="systemId" jdbcType="VARCHAR" />
+		<result column="TASK_STATUS" property="taskStatus" jdbcType="CHAR" />
+		<result column="PRE_RUN_TIME" property="preRunTime" jdbcType="TIMESTAMP" />
+		<result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+		<result column="UPDATE_OPER_ID" property="updateOperId"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		TASK_ID, TASK_NAME, TASK_DESC, TASK_TYPE, PERIOD_TYPE, SYNC_TIME_FORMAT,
+		RUN_TIME_INTERVAL,
+		RUN_NUM, IMPL_TYPE, IMPL_METH, IMPL_EXTRA_PARAM, TASK_CREATOR, SYSTEM_ID,
+		TASK_STATUS,
+		PRE_RUN_TIME, UPDATE_TIME, UPDATE_OPER_ID
+	</sql>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmTimerTaskDefExample">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_TIMER_TASK_DEF
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from SM_TIMER_TASK_DEF
+		where TASK_ID = #{taskId,jdbcType=DECIMAL}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from SM_TIMER_TASK_DEF
+		where TASK_ID = #{taskId,jdbcType=DECIMAL}
+	</delete>
+	<delete id="deleteByExample"
+		parameterType="cn.cttic.sysframe.frame.domain.SmTimerTaskDefExample">
+		delete from SM_TIMER_TASK_DEF
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert" parameterType="cn.cttic.sysframe.frame.model.SmTimerTaskModel">
+		insert into SM_TIMER_TASK_DEF (TASK_ID, TASK_NAME, TASK_DESC,
+		TASK_TYPE, PERIOD_TYPE, SYNC_TIME_FORMAT,
+		RUN_TIME_INTERVAL, RUN_NUM, IMPL_TYPE,
+		IMPL_METH, IMPL_EXTRA_PARAM, TASK_CREATOR,
+		SYSTEM_ID, TASK_STATUS, PRE_RUN_TIME,
+		UPDATE_TIME, UPDATE_OPER_ID)
+		values (#{taskId,jdbcType=DECIMAL}, #{taskName,jdbcType=VARCHAR},
+		#{taskDesc,jdbcType=VARCHAR},
+		#{taskType,jdbcType=DECIMAL}, #{periodType,jdbcType=DECIMAL}, #{syncTimeFormat,jdbcType=VARCHAR},
+		#{runTimeInterval,jdbcType=DECIMAL}, #{runNum,jdbcType=DECIMAL},
+		#{implType,jdbcType=DECIMAL},
+		#{implMeth,jdbcType=VARCHAR}, #{implExtraParam,jdbcType=VARCHAR}, #{taskCreator,jdbcType=VARCHAR},
+		#{systemId,jdbcType=VARCHAR}, #{taskStatus,jdbcType=CHAR},
+		#{preRunTime,jdbcType=TIMESTAMP},
+		#{updateTime,jdbcType=TIMESTAMP}, #{updateOperId,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="cn.cttic.sysframe.frame.model.SmTimerTaskModel">
+		insert into SM_TIMER_TASK_DEF
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="taskId != null">
+				TASK_ID,
+			</if>
+			<if test="taskName != null">
+				TASK_NAME,
+			</if>
+			<if test="taskDesc != null">
+				TASK_DESC,
+			</if>
+			<if test="taskType != null">
+				TASK_TYPE,
+			</if>
+			<if test="periodType != null">
+				PERIOD_TYPE,
+			</if>
+			<if test="syncTimeFormat != null">
+				SYNC_TIME_FORMAT,
+			</if>
+			<if test="runTimeInterval != null">
+				RUN_TIME_INTERVAL,
+			</if>
+			<if test="runNum != null">
+				RUN_NUM,
+			</if>
+			<if test="implType != null">
+				IMPL_TYPE,
+			</if>
+			<if test="implMeth != null">
+				IMPL_METH,
+			</if>
+			<if test="implExtraParam != null">
+				IMPL_EXTRA_PARAM,
+			</if>
+			<if test="taskCreator != null">
+				TASK_CREATOR,
+			</if>
+			<if test="systemId != null">
+				SYSTEM_ID,
+			</if>
+			<if test="taskStatus != null">
+				TASK_STATUS,
+			</if>
+			<if test="preRunTime != null">
+				PRE_RUN_TIME,
+			</if>
+			<if test="updateTime != null">
+				UPDATE_TIME,
+			</if>
+			<if test="updateOperId != null">
+				UPDATE_OPER_ID,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="taskId != null">
+				#{taskId,jdbcType=DECIMAL},
+			</if>
+			<if test="taskName != null">
+				#{taskName,jdbcType=VARCHAR},
+			</if>
+			<if test="taskDesc != null">
+				#{taskDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="taskType != null">
+				#{taskType,jdbcType=DECIMAL},
+			</if>
+			<if test="periodType != null">
+				#{periodType,jdbcType=DECIMAL},
+			</if>
+			<if test="syncTimeFormat != null">
+				#{syncTimeFormat,jdbcType=VARCHAR},
+			</if>
+			<if test="runTimeInterval != null">
+				#{runTimeInterval,jdbcType=DECIMAL},
+			</if>
+			<if test="runNum != null">
+				#{runNum,jdbcType=DECIMAL},
+			</if>
+			<if test="implType != null">
+				#{implType,jdbcType=DECIMAL},
+			</if>
+			<if test="implMeth != null">
+				#{implMeth,jdbcType=VARCHAR},
+			</if>
+			<if test="implExtraParam != null">
+				#{implExtraParam,jdbcType=VARCHAR},
+			</if>
+			<if test="taskCreator != null">
+				#{taskCreator,jdbcType=VARCHAR},
+			</if>
+			<if test="systemId != null">
+				#{systemId,jdbcType=VARCHAR},
+			</if>
+			<if test="taskStatus != null">
+				#{taskStatus,jdbcType=CHAR},
+			</if>
+			<if test="preRunTime != null">
+				#{preRunTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateOperId != null">
+				#{updateOperId,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample"
+		parameterType="cn.cttic.sysframe.frame.domain.SmTimerTaskDefExample"
+		resultType="java.lang.Integer">
+		select count(*) from SM_TIMER_TASK_DEF
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update SM_TIMER_TASK_DEF
+		<set>
+			<if test="record.taskId != null">
+				TASK_ID = #{record.taskId,jdbcType=DECIMAL},
+			</if>
+			<if test="record.taskName != null">
+				TASK_NAME = #{record.taskName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.taskDesc != null">
+				TASK_DESC = #{record.taskDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="record.taskType != null">
+				TASK_TYPE = #{record.taskType,jdbcType=DECIMAL},
+			</if>
+			<if test="record.periodType != null">
+				PERIOD_TYPE = #{record.periodType,jdbcType=DECIMAL},
+			</if>
+			<if test="record.syncTimeFormat != null">
+				SYNC_TIME_FORMAT = #{record.syncTimeFormat,jdbcType=VARCHAR},
+			</if>
+			<if test="record.runTimeInterval != null">
+				RUN_TIME_INTERVAL = #{record.runTimeInterval,jdbcType=DECIMAL},
+			</if>
+			<if test="record.runNum != null">
+				RUN_NUM = #{record.runNum,jdbcType=DECIMAL},
+			</if>
+			<if test="record.implType != null">
+				IMPL_TYPE = #{record.implType,jdbcType=DECIMAL},
+			</if>
+			<if test="record.implMeth != null">
+				IMPL_METH = #{record.implMeth,jdbcType=VARCHAR},
+			</if>
+			<if test="record.implExtraParam != null">
+				IMPL_EXTRA_PARAM = #{record.implExtraParam,jdbcType=VARCHAR},
+			</if>
+			<if test="record.taskCreator != null">
+				TASK_CREATOR = #{record.taskCreator,jdbcType=VARCHAR},
+			</if>
+			<if test="record.systemId != null">
+				SYSTEM_ID = #{record.systemId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.taskStatus != null">
+				TASK_STATUS = #{record.taskStatus,jdbcType=CHAR},
+			</if>
+			<if test="record.preRunTime != null">
+				PRE_RUN_TIME = #{record.preRunTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.updateTime != null">
+				UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.updateOperId != null">
+				UPDATE_OPER_ID = #{record.updateOperId,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update SM_TIMER_TASK_DEF
+		set TASK_ID = #{record.taskId,jdbcType=DECIMAL},
+		TASK_NAME = #{record.taskName,jdbcType=VARCHAR},
+		TASK_DESC = #{record.taskDesc,jdbcType=VARCHAR},
+		TASK_TYPE = #{record.taskType,jdbcType=DECIMAL},
+		PERIOD_TYPE = #{record.periodType,jdbcType=DECIMAL},
+		SYNC_TIME_FORMAT = #{record.syncTimeFormat,jdbcType=VARCHAR},
+		RUN_TIME_INTERVAL = #{record.runTimeInterval,jdbcType=DECIMAL},
+		RUN_NUM = #{record.runNum,jdbcType=DECIMAL},
+		IMPL_TYPE = #{record.implType,jdbcType=DECIMAL},
+		IMPL_METH = #{record.implMeth,jdbcType=VARCHAR},
+		IMPL_EXTRA_PARAM = #{record.implExtraParam,jdbcType=VARCHAR},
+		TASK_CREATOR = #{record.taskCreator,jdbcType=VARCHAR},
+		SYSTEM_ID = #{record.systemId,jdbcType=VARCHAR},
+		TASK_STATUS = #{record.taskStatus,jdbcType=CHAR},
+		PRE_RUN_TIME = #{record.preRunTime,jdbcType=TIMESTAMP},
+		UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+		UPDATE_OPER_ID = #{record.updateOperId,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.cttic.sysframe.frame.model.SmTimerTaskModel">
+		update SM_TIMER_TASK_DEF
+		<set>
+			<if test="taskName != null">
+				TASK_NAME = #{taskName,jdbcType=VARCHAR},
+			</if>
+			<if test="taskDesc != null">
+				TASK_DESC = #{taskDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="taskType != null">
+				TASK_TYPE = #{taskType,jdbcType=DECIMAL},
+			</if>
+			<if test="periodType != null">
+				PERIOD_TYPE = #{periodType,jdbcType=DECIMAL},
+			</if>
+			<if test="syncTimeFormat != null">
+				SYNC_TIME_FORMAT = #{syncTimeFormat,jdbcType=VARCHAR},
+			</if>
+			<if test="runTimeInterval != null">
+				RUN_TIME_INTERVAL = #{runTimeInterval,jdbcType=DECIMAL},
+			</if>
+			<if test="runNum != null">
+				RUN_NUM = #{runNum,jdbcType=DECIMAL},
+			</if>
+			<if test="implType != null">
+				IMPL_TYPE = #{implType,jdbcType=DECIMAL},
+			</if>
+			<if test="implMeth != null">
+				IMPL_METH = #{implMeth,jdbcType=VARCHAR},
+			</if>
+			<if test="implExtraParam != null">
+				IMPL_EXTRA_PARAM = #{implExtraParam,jdbcType=VARCHAR},
+			</if>
+			<if test="taskCreator != null">
+				TASK_CREATOR = #{taskCreator,jdbcType=VARCHAR},
+			</if>
+			<if test="systemId != null">
+				SYSTEM_ID = #{systemId,jdbcType=VARCHAR},
+			</if>
+			<if test="taskStatus != null">
+				TASK_STATUS = #{taskStatus,jdbcType=CHAR},
+			</if>
+			<if test="preRunTime != null">
+				PRE_RUN_TIME = #{preRunTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateOperId != null">
+				UPDATE_OPER_ID = #{updateOperId,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where TASK_ID = #{taskId,jdbcType=DECIMAL}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.cttic.sysframe.frame.model.SmTimerTaskModel">
+		update SM_TIMER_TASK_DEF
+		set TASK_NAME = #{taskName,jdbcType=VARCHAR},
+		TASK_DESC = #{taskDesc,jdbcType=VARCHAR},
+		TASK_TYPE = #{taskType,jdbcType=DECIMAL},
+		PERIOD_TYPE = #{periodType,jdbcType=DECIMAL},
+		SYNC_TIME_FORMAT = #{syncTimeFormat,jdbcType=VARCHAR},
+		RUN_TIME_INTERVAL = #{runTimeInterval,jdbcType=DECIMAL},
+		RUN_NUM = #{runNum,jdbcType=DECIMAL},
+		IMPL_TYPE = #{implType,jdbcType=DECIMAL},
+		IMPL_METH = #{implMeth,jdbcType=VARCHAR},
+		IMPL_EXTRA_PARAM = #{implExtraParam,jdbcType=VARCHAR},
+		TASK_CREATOR = #{taskCreator,jdbcType=VARCHAR},
+		SYSTEM_ID = #{systemId,jdbcType=VARCHAR},
+		TASK_STATUS = #{taskStatus,jdbcType=CHAR},
+		PRE_RUN_TIME = #{preRunTime,jdbcType=TIMESTAMP},
+		UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+		UPDATE_OPER_ID = #{updateOperId,jdbcType=VARCHAR}
+		where TASK_ID = #{taskId,jdbcType=DECIMAL}
+	</update>
+	<update id="updateTimerTaskDefRunDate" parameterType="cn.cttic.sysframe.frame.model.SmTimerTaskModel">
+  	<![CDATA[
+   	 	update SM_TIMER_TASK_DEF set pre_run_time = #{preRunTime} where task_id=#{taskId} and (pre_run_time is null or pre_run_time < #{preRunTime} ) 
+    ]]>
+	</update>
+	<select id="getSmTimerTaskDefListByTimer" resultMap="BaseResultMap"
+		parameterType="map">
+		<if test="instanceId !=null ">
+			select a.* from sm_timer_task_def a,sm_timer_engine_config b
+			where a.task_id=b.task_id and a.task_status=#{taskStatus}
+			and b.system_id=#{systemId} and b.instance_id= #{instanceId}
+		</if>
+		<if test="instanceId ==null ">
+			select a.* from sm_timer_task_def a
+			where a.task_status=#{taskStatus}
+			and a.system_id=#{systemId}
+		</if>
+	</select>
+	<select id="queryPage"
+		parameterType="cn.cttic.sysframe.frame.domain.SmTimerTaskDefExample"
+		resultMap="BaseResultMap">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_TIMER_TASK_DEF
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+</mapper>

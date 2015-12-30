@@ -1,0 +1,311 @@
+2015-12-28 09:55:07,826 [main] INFO [us.codecraft.webmagic.Spider] - Spider www.kuparts.com started!
+2015-12-28 09:55:07,831 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://www.kuparts.com/ProCategory/Index/
+2015-12-28 09:55:09,016 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/a76077dc-0ef0-4896-8793-22987a2695eb
+2015-12-28 09:55:09,017 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/f3712acf-e2a6-460b-a74c-4964a4d58416
+2015-12-28 09:55:09,017 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ab5bf0ad-2aad-4b02-82f1-4ac91128d5d3
+2015-12-28 09:55:09,016 [pool-1-thread-4] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ced48c1e-b295-4d95-9b79-45af86ec327a
+2015-12-28 09:55:09,016 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/d5aaab8d-cfc2-4890-b75a-23928cafa42f
+2015-12-28 09:55:11,550 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/7f6704de-71bb-466c-8323-99a88137004b
+2015-12-28 09:55:11,551 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e4f7de85-3f54-4071-9649-9e036e144b8e
+2015-12-28 09:55:11,565 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/946d0474-2331-4766-828c-b1ccbc013d68
+2015-12-28 09:55:11,606 [pool-1-thread-4] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/572db6e9-e294-427c-82ef-03a3760dd5eb
+2015-12-28 09:55:11,634 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/dd0b27de-a55b-48c8-a37d-0887864d243b
+2015-12-28 09:55:12,491 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/35ddab45-0c9a-414e-9bde-270d787a72e6
+2015-12-28 09:55:12,561 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/5506595c-fd7b-45aa-908f-2cca08f6cd57
+2015-12-28 09:55:12,619 [pool-1-thread-4] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/9dbfebaa-956f-4f7b-8ff9-468b7112f1ca
+2015-12-28 09:55:12,623 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6bd548be-164f-4518-883b-5ec01169b994
+2015-12-28 09:55:12,721 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e1aaa438-4bfc-4cc6-b725-698d96563acb
+2015-12-28 09:55:13,334 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ab9007a3-55ea-4ba7-b39d-765ba7fd099e
+2015-12-28 09:55:13,442 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/805b1f79-80b1-4b85-b3e4-779c913b7d90
+2015-12-28 09:55:13,515 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e2647be2-7194-4d91-845f-890d22657cc0
+2015-12-28 09:55:13,564 [pool-1-thread-4] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/17cb3456-f231-484d-962c-ba0c1454b7fc
+2015-12-28 09:55:13,621 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/68f8164c-2275-4bc7-9585-bd3e8b654a81
+2015-12-28 09:55:14,237 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/d6f91e08-f849-4e68-a168-d17397f97e8f
+2015-12-28 09:55:14,243 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/550e7dbe-e061-476a-8a75-d6dc2af2275b
+2015-12-28 09:55:14,255 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6c58f69a-f405-482a-aea2-db3cb5904f3e
+2015-12-28 10:17:04,964 [main] INFO [us.codecraft.webmagic.Spider] - Spider www.kuparts.com started!
+2015-12-28 10:17:04,969 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://www.kuparts.com/ProCategory/Index/
+2015-12-28 10:17:06,207 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/d5aaab8d-cfc2-4890-b75a-23928cafa42f
+2015-12-28 10:17:06,207 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/a76077dc-0ef0-4896-8793-22987a2695eb
+2015-12-28 10:17:06,207 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ab5bf0ad-2aad-4b02-82f1-4ac91128d5d3
+2015-12-28 10:17:06,209 [pool-1-thread-4] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ced48c1e-b295-4d95-9b79-45af86ec327a
+2015-12-28 10:17:06,210 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/f3712acf-e2a6-460b-a74c-4964a4d58416
+2015-12-28 10:17:07,338 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/7f6704de-71bb-466c-8323-99a88137004b
+2015-12-28 10:17:07,433 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e4f7de85-3f54-4071-9649-9e036e144b8e
+2015-12-28 10:17:07,538 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/946d0474-2331-4766-828c-b1ccbc013d68
+2015-12-28 10:17:07,583 [pool-1-thread-4] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/572db6e9-e294-427c-82ef-03a3760dd5eb
+2015-12-28 10:17:07,634 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/dd0b27de-a55b-48c8-a37d-0887864d243b
+2015-12-28 10:17:08,208 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/35ddab45-0c9a-414e-9bde-270d787a72e6
+2015-12-28 10:17:08,437 [pool-1-thread-4] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/5506595c-fd7b-45aa-908f-2cca08f6cd57
+2015-12-28 10:17:08,451 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/9dbfebaa-956f-4f7b-8ff9-468b7112f1ca
+2015-12-28 10:17:08,452 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6bd548be-164f-4518-883b-5ec01169b994
+2015-12-28 10:17:08,588 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e1aaa438-4bfc-4cc6-b725-698d96563acb
+2015-12-28 10:17:09,103 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ab9007a3-55ea-4ba7-b39d-765ba7fd099e
+2015-12-28 10:17:09,409 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/805b1f79-80b1-4b85-b3e4-779c913b7d90
+2015-12-28 10:17:09,420 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e2647be2-7194-4d91-845f-890d22657cc0
+2015-12-28 10:17:09,436 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/17cb3456-f231-484d-962c-ba0c1454b7fc
+2015-12-28 10:17:09,444 [pool-1-thread-4] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/68f8164c-2275-4bc7-9585-bd3e8b654a81
+2015-12-28 10:17:27,485 [main] INFO [us.codecraft.webmagic.Spider] - Spider www.kuparts.com started!
+2015-12-28 10:17:27,491 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://www.kuparts.com/ProCategory/Index/
+2015-12-28 10:18:25,049 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/a76077dc-0ef0-4896-8793-22987a2695eb
+2015-12-28 10:18:25,049 [pool-1-thread-5] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/f3712acf-e2a6-460b-a74c-4964a4d58416
+2015-12-28 10:18:25,050 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ab5bf0ad-2aad-4b02-82f1-4ac91128d5d3
+2015-12-28 10:18:25,049 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/d5aaab8d-cfc2-4890-b75a-23928cafa42f
+2015-12-28 10:18:25,049 [pool-1-thread-4] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ced48c1e-b295-4d95-9b79-45af86ec327a
+2015-12-28 10:19:09,136 [pool-1-thread-3] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/7f6704de-71bb-466c-8323-99a88137004b
+2015-12-28 10:19:26,211 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e4f7de85-3f54-4071-9649-9e036e144b8e
+2015-12-28 10:19:26,991 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/946d0474-2331-4766-828c-b1ccbc013d68
+2015-12-28 10:19:27,768 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/572db6e9-e294-427c-82ef-03a3760dd5eb
+2015-12-28 10:19:28,530 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/dd0b27de-a55b-48c8-a37d-0887864d243b
+2015-12-28 10:19:29,291 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/35ddab45-0c9a-414e-9bde-270d787a72e6
+2015-12-28 10:19:30,134 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/5506595c-fd7b-45aa-908f-2cca08f6cd57
+2015-12-28 10:19:30,926 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/9dbfebaa-956f-4f7b-8ff9-468b7112f1ca
+2015-12-28 10:19:31,708 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6bd548be-164f-4518-883b-5ec01169b994
+2015-12-28 10:19:32,467 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e1aaa438-4bfc-4cc6-b725-698d96563acb
+2015-12-28 10:19:33,238 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ab9007a3-55ea-4ba7-b39d-765ba7fd099e
+2015-12-28 10:19:33,985 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/805b1f79-80b1-4b85-b3e4-779c913b7d90
+2015-12-28 10:19:34,720 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e2647be2-7194-4d91-845f-890d22657cc0
+2015-12-28 10:19:35,466 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/17cb3456-f231-484d-962c-ba0c1454b7fc
+2015-12-28 10:19:36,253 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/68f8164c-2275-4bc7-9585-bd3e8b654a81
+2015-12-28 10:19:37,372 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/d6f91e08-f849-4e68-a168-d17397f97e8f
+2015-12-28 10:19:38,219 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/550e7dbe-e061-476a-8a75-d6dc2af2275b
+2015-12-28 10:19:38,994 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6c58f69a-f405-482a-aea2-db3cb5904f3e
+2015-12-28 10:19:39,714 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/285b6673-a2af-4c4b-b883-e81c3e64ff6a
+2015-12-28 10:19:40,448 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/58d295e8-355b-481f-8994-f7f8a0791aa3
+2015-12-28 10:19:41,280 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/380c3e08-c157-447b-b968-fa9a67efdcf9
+2015-12-28 10:19:42,143 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/84dd77d5-d33e-4d7a-bf0d-02f399dffe6c
+2015-12-28 10:19:43,000 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/bfc6afa5-07d3-48be-b613-27d4acf1f4bc
+2015-12-28 10:19:43,839 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/53319f01-53ef-4548-83cd-405000812c63
+2015-12-28 10:19:44,756 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/264d5822-2c3d-41c1-b180-626b0bd29487
+2015-12-28 10:19:45,596 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/2df9e621-20d8-4f7d-ae82-6789338a59c2
+2015-12-28 10:19:46,435 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/5173eca4-91fb-4bf8-9214-9c1962ad4371
+2015-12-28 10:19:47,234 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/26d9eafb-87cc-435b-97ec-2ab54d892d7b
+2015-12-28 10:19:48,087 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/11ff4941-19c3-4bd2-b026-680b650a92c1
+2015-12-28 10:19:48,977 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/8cfc8918-0776-4ffa-95d0-9b17d244ea2f
+2015-12-28 10:19:49,820 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/0885e9d5-b653-4ffa-8f21-17b00775fa24
+2015-12-28 10:19:50,703 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/774535d5-e5d2-45eb-bfda-79e300789eec
+2015-12-28 10:19:51,540 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ed0563b1-dfc5-45d4-b934-a1dd95f46edd
+2015-12-28 10:19:52,350 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/b27b08fe-81f0-4b12-a1a8-a5127a75fd5a
+2015-12-28 10:19:53,097 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/9cecfc7f-f5c6-45d3-8e9b-aad132c69aee
+2015-12-28 10:19:53,817 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/b15931e7-84fe-4d94-8f59-00b0f213d0e7
+2015-12-28 10:19:54,575 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/80699640-d4d6-4444-a164-156e4e38f926
+2015-12-28 10:19:55,303 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6beda603-5489-4861-9e43-24d8f92d8695
+2015-12-28 10:19:56,054 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/7d8c7b1c-b1a8-45fb-974f-37bf9a39448b
+2015-12-28 10:19:56,801 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/409d345a-0f49-44b6-97f4-4996ac5f9425
+2015-12-28 10:19:57,586 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/98774906-9027-4f2e-9017-5b6361621e29
+2015-12-28 10:19:58,350 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/8a77391a-bb1e-4262-a8b6-629b1183be61
+2015-12-28 10:19:59,209 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/a9b2cdbb-9069-49ee-a6a7-65b3174a6a03
+2015-12-28 10:19:59,983 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/16041e46-d69a-4824-b0d7-6bd2d68c6437
+2015-12-28 10:20:00,766 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/f31b6806-55b5-4b34-b641-8ebd5ab852d3
+2015-12-28 10:20:01,564 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/58f4f6d6-9eb0-44fc-bfc8-96c035d4824b
+2015-12-28 10:20:02,342 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/bf188687-d79d-45e5-8e31-a4e9c96d9a9d
+2015-12-28 10:20:03,078 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/f3f329e4-1527-47d1-b78d-ba34fd2f948f
+2015-12-28 10:20:03,796 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/188c461c-1a4b-42e5-94cd-d9dadca4714b
+2015-12-28 10:20:04,617 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e1990792-1697-409f-9332-e2f335643e05
+2015-12-28 10:20:05,392 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/600dc257-b4a9-4b88-8180-f219dd46d728
+2015-12-28 10:20:06,103 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/dcaa93d5-079e-4b80-a029-f2cf9a82e593
+2015-12-28 10:20:06,854 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/c4cab7bc-efaf-490d-9c86-fc407aca7d8c
+2015-12-28 10:20:07,587 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/b17d63b8-c0f3-4880-8086-558e4fdc2a8c
+2015-12-28 10:20:08,409 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/a654a903-32bd-4727-a5a8-764d57889ab0
+2015-12-28 10:20:09,323 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/0ba42f19-fd60-4288-9c97-83a10dba29bb
+2015-12-28 10:20:10,167 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6ddc5bce-c7b2-4e7b-baff-dc5a6022e70b
+2015-12-28 10:20:11,015 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/2beaf780-d9a1-49f8-ae3f-eee08dc8239a
+2015-12-28 10:20:11,784 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/9c1614ed-8920-4cef-8c5c-1e636eccf2cc
+2015-12-28 10:20:12,544 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6f000c73-9de8-4eec-b6bd-2bc981c32afa
+2015-12-28 10:20:13,357 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/32df1bff-cd69-48eb-835e-3fca6a6feb4a
+2015-12-28 10:20:14,188 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/58d00219-d2df-48fd-a16a-45bbf2e3e3d3
+2015-12-28 10:20:15,069 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/2068fccb-1d51-4d5c-b933-6f1fba7602f3
+2015-12-28 10:20:15,980 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/3ea0a51d-e653-4f65-92b8-b09cdabe46dd
+2015-12-28 10:20:16,725 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/8a483004-3160-4891-b7ba-b65f6106c0b1
+2015-12-28 10:20:17,464 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/22d13418-a943-4cfc-b012-c2a65cf53647
+2015-12-28 10:20:18,232 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/d9bf08c3-5ce3-46a1-b130-c32e82f887da
+2015-12-28 10:20:18,974 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/915a0362-9f7f-43f2-826d-cf33f2a326ef
+2015-12-28 10:20:19,798 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/e4a1ad39-1595-4def-8512-d3033246d5fe
+2015-12-28 10:20:20,664 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/f9b5bc2f-9cae-4035-a08c-d9f145186aca
+2015-12-28 10:20:21,527 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/4e22d1a6-f8a6-49fb-af99-e1e09eeed135
+2015-12-28 10:20:22,274 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/c2a6968e-8057-46e0-8073-ed22651ef0fe
+2015-12-28 10:20:23,217 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/4ad788b4-8d51-4b15-9598-edb7c656f366
+2015-12-28 10:20:24,062 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/c71840ab-1467-4d44-b763-f39b1a6e80ab
+2015-12-28 10:20:24,877 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/577d4da8-c072-4cf0-98b8-ff8a36feeab8
+2015-12-28 10:20:25,798 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/46993b13-eee0-4e71-a118-6583b65e1989
+2015-12-28 10:20:26,719 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/62f5a682-56de-4682-ba8b-876a0e0a8cd2
+2015-12-28 10:20:27,610 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/1c7f9699-104c-46fd-8805-95b2a6a5263b
+2015-12-28 10:20:28,543 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/2643e867-cbfa-41e1-9f6d-b10f99adb426
+2015-12-28 10:20:29,434 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/74481934-7686-4a0f-a05a-bf7eb03d2f11
+2015-12-28 10:20:30,233 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ac338311-ff1a-4fd7-9026-dd5492ec3f7d
+2015-12-28 10:20:31,086 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/9fc10f3a-75e2-4b49-af3e-f86da322b977
+2015-12-28 10:20:31,888 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/df06009e-d753-404d-a8b9-3b5c226b344f
+2015-12-28 10:20:32,777 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/da93c733-f8f5-4423-b24c-3eea3ae97ff6
+2015-12-28 10:20:33,699 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/a9f32e2b-51eb-4eeb-9b43-427fbaea3448
+2015-12-28 10:20:34,608 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/0b8a53d5-c4ff-4a33-8cc1-5826f8c36157
+2015-12-28 10:20:35,469 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/007ce102-6772-4090-81c7-5b3eb91b4a17
+2015-12-28 10:20:36,374 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/c827bc46-518c-482a-bba9-74bc19d2a90f
+2015-12-28 10:20:37,221 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/c72ef3a3-5194-4d89-87da-8580983eaa2e
+2015-12-28 10:20:38,064 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/3d5365f0-28cb-4ace-bcf1-9b9fb3a18726
+2015-12-28 10:20:38,960 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6bed68b9-a7a9-4578-87ee-bc5281dd48fd
+2015-12-28 10:20:39,805 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/74f4eff4-0160-46ec-9891-dd09b30dee8e
+2015-12-28 10:20:40,602 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/3cb34be8-ca34-401f-b51f-0799c057cc9d
+2015-12-28 10:20:41,422 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/a67cc5fa-593f-40b2-833d-3574a9ce9a33
+2015-12-28 10:20:42,296 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/215b8e60-6f7b-4e6d-9492-ac5f4dc109eb
+2015-12-28 10:20:43,133 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/cefb028e-a8a6-4886-ae62-55fc58d7cd0d
+2015-12-28 10:20:43,998 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/79b9f34c-93a3-4606-8a4d-90037a8e724c
+2015-12-28 10:20:44,961 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/1aa0c7ca-a12e-4264-8a50-ad4dcd87efdb
+2015-12-28 10:20:45,834 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/817cfc72-9df5-49eb-8147-e46bb3fb4864
+2015-12-28 10:20:46,762 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/d98c8d17-e5de-451b-92d5-3b10712e8b2c
+2015-12-28 10:20:48,045 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/350531ee-22ac-4ce9-aa45-4989f6f7c397
+2015-12-28 10:20:49,027 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ee81737e-4c56-4b58-9422-9bb79e37b687
+2015-12-28 10:20:49,850 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/299df7de-84f6-4c9b-8966-c257f28938de
+2015-12-28 10:20:50,802 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/3f1a57fa-7a53-4f3d-98e2-d2374e46901e
+2015-12-28 10:20:51,696 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/c852f586-0e76-49f4-9ae0-d9714cd1eb8c
+2015-12-28 10:20:52,670 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/9b43cb0d-29aa-4757-b8b2-dd97ed5bcfce
+2015-12-28 10:20:53,536 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/f4a071bb-0c55-49a9-bb7c-5a3e08d159ff
+2015-12-28 10:20:54,469 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/0d4687ed-d6ac-466d-80e0-683b6267867c
+2015-12-28 10:20:55,404 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/cf891a8b-c421-4a9e-a788-b58a666f7f3b
+2015-12-28 10:20:56,365 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/0707b62f-9db2-4c18-a0ef-d10746926846
+2015-12-28 10:20:57,257 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ea890e78-9f53-419e-b481-113e9d708e51
+2015-12-28 10:20:58,023 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/215767c3-9b77-4137-858c-44c95f61a1c8
+2015-12-28 10:20:58,806 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ab61c76f-b926-4db6-a6c6-0cb67dd98ad9
+2015-12-28 10:20:59,607 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/2bb18357-094a-4727-a4f0-102b7f04fcc7
+2015-12-28 10:21:00,474 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/5534a366-acc3-4444-8206-136dd97da4f6
+2015-12-28 10:21:01,346 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/5a3ca293-2d8b-4bca-99d3-32945f09ce04
+2015-12-28 10:21:02,204 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/92f07585-a301-4f9e-9add-3474ba76d35d
+2015-12-28 10:21:03,134 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/5e3debec-aaf9-4a0f-a661-3f29ba6e609f
+2015-12-28 10:21:04,100 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/19a232a8-e5db-4b9c-b8db-7f6f5976ed86
+2015-12-28 10:21:04,900 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/9d395f5d-9ce9-4fc6-b8cc-836765028276
+2015-12-28 10:21:05,662 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/f951693c-d38c-4dd3-9699-b480e6155798
+2015-12-28 10:21:06,526 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/84fb38bf-af63-4c3f-81b3-d766434f1dcf
+2015-12-28 10:21:07,307 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/4c41b18d-424f-489e-acea-d8f8a4bc7b67
+2015-12-28 10:21:08,130 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/4db91051-eb52-474b-87bb-e0049d8d1c34
+2015-12-28 10:21:08,907 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/2ecf84fa-cb52-4ee6-804f-eb024a8f5a11
+2015-12-28 10:21:09,733 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ebc5d717-404f-4545-ac22-21ca40af7c1e
+2015-12-28 10:21:10,609 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/f622c656-9bf7-4c2d-8cc7-23be15ead6bf
+2015-12-28 10:21:11,436 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/9ed945a1-485d-4faf-9950-4df534a8f8bb
+2015-12-28 10:21:12,264 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/a52581a9-ddd3-459b-a0ff-513a67b5e1c3
+2015-12-28 10:21:13,047 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/740db90a-2428-45dc-ac2c-62b3ddf855eb
+2015-12-28 10:21:13,101 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/439c9c5f-7b03-4af8-b5ce-6c91d8d5e50d
+2015-12-28 10:21:13,893 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/fed28c5d-a896-4b1a-95b8-a89dbbfe3a5d
+2015-12-28 10:21:14,088 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/25d1518a-c050-4d83-97e1-c5adae689c69
+2015-12-28 10:21:14,759 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/4a63de79-c9b1-4ff2-b0cf-cef7e9db09a3
+2015-12-28 10:21:14,912 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/ef83f822-a122-44d5-9df5-d0235b4752e2
+2015-12-28 10:21:15,550 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/7cfe0b47-77ee-4eb6-8a0d-e3a67a1c42e8
+2015-12-28 10:21:15,664 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/99078806-9196-4c35-81f9-fbbc4028043e
+2015-12-28 10:21:16,336 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/dc5d713d-e823-4134-b89f-2aa3b37fde22
+2015-12-28 10:21:16,518 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/4e23909e-4051-4713-99f1-3c5b05761be8
+2015-12-28 10:21:17,151 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/66973214-477a-4113-95d9-8aaecb213418
+2015-12-28 10:21:17,290 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://list.kuparts.com/Products/list/6909ccc3-2ebe-4897-8b47-d82938be623d
+2015-12-28 10:24:38,501 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 10:24:38,507 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96
+2015-12-28 11:35:31,137 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 11:35:31,144 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96
+2015-12-28 11:37:37,940 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 11:37:37,943 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96
+2015-12-28 12:25:52,960 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 12:25:52,965 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96
+2015-12-28 12:25:54,553 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://dsc.taobaocdn.com/i7/520/670/522672932273/TB1jjMGJFXXXXcJXFXX8qtpFXlX.desc%7Cvar%5Edesc%3Blang%5Egbk%3Bsign%5Ee3cbc7fae7b42c991d691516629a0c31%3Bt%5E1446078595
+2015-12-28 12:28:44,459 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 12:28:44,462 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96
+2015-12-28 12:28:45,811 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://dsc.taobaocdn.com/i7/520/670/522672932273/TB1jjMGJFXXXXcJXFXX8qtpFXlX.desc%7Cvar%5Edesc%3Blang%5Egbk%3Bsign%5Ee3cbc7fae7b42c991d691516629a0c31%3Bt%5E1446078595
+2015-12-28 12:30:22,774 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 12:30:22,777 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96
+2015-12-28 12:30:24,157 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://dsc.taobaocdn.com/i7/520/670/522672932273/TB1jjMGJFXXXXcJXFXX8qtpFXlX.desc%7Cvar%5Edesc%3Blang%5Egbk%3Bsign%5Ee3cbc7fae7b42c991d691516629a0c31%3Bt%5E1446078595
+2015-12-28 12:32:49,168 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 12:32:49,171 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96
+2015-12-28 12:32:50,564 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://dsc.taobaocdn.com/i7/520/670/522672932273/TB1jjMGJFXXXXcJXFXX8qtpFXlX.desc%7Cvar%5Edesc%3Blang%5Egbk%3Bsign%5Ee3cbc7fae7b42c991d691516629a0c31%3Bt%5E1446078595
+2015-12-28 12:37:29,892 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 12:37:29,895 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96
+2015-12-28 12:37:31,373 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://dsc.taobaocdn.com/i7/520/670/522672932273/TB1jjMGJFXXXXcJXFXX8qtpFXlX.desc%7Cvar%5Edesc%3Blang%5Egbk%3Bsign%5Ee3cbc7fae7b42c991d691516629a0c31%3Bt%5E1446078595
+2015-12-28 12:45:01,510 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 12:45:01,514 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/a25cc6d6-97f1-464a-be1e-0bedf8577af8
+2015-12-28 12:46:38,636 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 12:46:38,642 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/a25cc6d6-97f1-464a-be1e-0bedf8577af8
+2015-12-28 12:58:23,709 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 12:58:23,713 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/a25cc6d6-97f1-464a-be1e-0bedf8577af8
+2015-12-28 12:58:24,464 [pool-1-thread-1] ERROR [us.codecraft.webmagic.Spider] - process request Request{url='http://item.kuparts.com/Products/Detail/a25cc6d6-97f1-464a-be1e-0bedf8577af8', method='null', extras={statusCode=200}, priority=0} error
+java.lang.IllegalArgumentException: Unclosed quotes! //div[@class='ly_main']//div[@class='editor_text undis']/html()']/@data-tfs-url
+	at org.jsoup.helper.Validate.isTrue(Validate.java:45)
+	at us.codecraft.xsoup.XTokenQueue.consumeToUnescaped(XTokenQueue.java:529)
+	at us.codecraft.xsoup.XTokenQueue.chompBalancedQuotes(XTokenQueue.java:301)
+	at us.codecraft.xsoup.xevaluator.XPathParser.consumeSubQuery(XPathParser.java:145)
+	at us.codecraft.xsoup.xevaluator.XPathParser.combinator(XPathParser.java:113)
+	at us.codecraft.xsoup.xevaluator.XPathParser.parse(XPathParser.java:78)
+	at us.codecraft.xsoup.xevaluator.XPathParser.parse(XPathParser.java:412)
+	at us.codecraft.xsoup.Xsoup.compile(Xsoup.java:25)
+	at us.codecraft.webmagic.selector.XpathSelector.<init>(XpathSelector.java:21)
+	at us.codecraft.webmagic.selector.Selectors.xpath(Selectors.java:32)
+	at us.codecraft.webmagic.selector.HtmlNode.xpath(HtmlNode.java:42)
+	at us.codecraft.webmagic.KupartsDtPageProcessor.process(KupartsDtPageProcessor.java:73)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:421)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-12-28 13:00:11,036 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 13:00:11,039 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/a25cc6d6-97f1-464a-be1e-0bedf8577af8
+2015-12-28 13:00:12,361 [pool-1-thread-2] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20品牌：耀丰%20YAOFENG</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20型号：DSC-1206</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20OEM：87139-30010</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20适用车型：%20凌志GS300</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20材料：高级活性炭</p>
+2015-12-28 13:00:12,366 [pool-1-thread-2] ERROR [us.codecraft.webmagic.Spider] - process request Request{url='http://item.kuparts.com/Products/Detail/<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20品牌：耀丰%20YAOFENG</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20型号：DSC-1206</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20OEM：87139-30010</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20适用车型：%20凌志GS300</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20材料：高级活性炭</p>', method='null', extras={statusCode=0}, priority=0} error
+java.lang.IllegalArgumentException: Illegal character in path at index 40: http://item.kuparts.com/Products/Detail/<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20品牌：耀丰%20YAOFENG</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20型号：DSC-1206</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20OEM：87139-30010</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20适用车型：%20凌志GS300</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20材料：高级活性炭</p>
+	at java.net.URI.create(URI.java:859)
+	at org.apache.http.client.methods.RequestBuilder.setUri(RequestBuilder.java:175)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.getHttpUriRequest(HttpClientDownloader.java:133)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:91)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:409)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+Caused by: java.net.URISyntaxException: Illegal character in path at index 40: http://item.kuparts.com/Products/Detail/<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20品牌：耀丰%20YAOFENG</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20型号：DSC-1206</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20OEM：87139-30010</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20适用车型：%20凌志GS300</p>
+<p%20style="margin-top:1.12em;margin-bottom:1.12em;padding:0px;color:#222222;font-family:tahoma,%20arial,%20宋体,%20sans-serif;font-size:14px;line-height:21px;white-space:normal;">%20材料：高级活性炭</p>
+	at java.net.URI$Parser.fail(URI.java:2829)
+	at java.net.URI$Parser.checkChars(URI.java:3002)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3086)
+	at java.net.URI$Parser.parse(URI.java:3034)
+	at java.net.URI.<init>(URI.java:595)
+	at java.net.URI.create(URI.java:857)
+	... 9 more
+2015-12-28 13:01:07,176 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 13:01:07,179 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/a25cc6d6-97f1-464a-be1e-0bedf8577af8
+2015-12-28 13:03:49,251 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 13:03:49,254 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/b9327297-4338-4802-bf53-c6577bcf5da2
+2015-12-28 13:03:50,191 [pool-1-thread-1] ERROR [us.codecraft.webmagic.Spider] - process request Request{url='http://item.kuparts.com/Products/Detail/b9327297-4338-4802-bf53-c6577bcf5da2', method='null', extras={statusCode=200}, priority=0} error
+java.lang.ArrayIndexOutOfBoundsException: 160
+	at com.alibaba.fastjson.serializer.SerializeWriter.writeStringWithDoubleQuote(SerializeWriter.java:868)
+	at com.alibaba.fastjson.serializer.SerializeWriter.writeStringWithDoubleQuote(SerializeWriter.java:602)
+	at com.alibaba.fastjson.serializer.SerializeWriter.writeString(SerializeWriter.java:1366)
+	at com.alibaba.fastjson.serializer.StringCodec.write(StringCodec.java:49)
+	at com.alibaba.fastjson.serializer.StringCodec.write(StringCodec.java:34)
+	at com.alibaba.fastjson.serializer.MapSerializer.write(MapSerializer.java:188)
+	at com.alibaba.fastjson.serializer.JSONSerializer.write(JSONSerializer.java:369)
+	at com.alibaba.fastjson.JSON.toJSONString(JSON.java:418)
+	at com.alibaba.fastjson.JSON.toJSONString(JSON.java:406)
+	at us.codecraft.webmagic.pipeline.JsonFilePipeline.process(JsonFilePipeline.java:41)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:427)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+2015-12-28 13:17:29,468 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 13:17:29,472 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/b9327297-4338-4802-bf53-c6577bcf5da2
+2015-12-28 13:23:08,108 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 13:23:08,111 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/b9327297-4338-4802-bf53-c6577bcf5da2
+2015-12-28 13:28:43,484 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 13:28:43,487 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96
+2015-12-28 13:30:09,915 [main] INFO [us.codecraft.webmagic.Spider] - Spider item.kuparts.com started!
+2015-12-28 13:30:09,918 [pool-1-thread-1] INFO [us.codecraft.webmagic.downloader.HttpClientDownloader] - downloading page http://item.kuparts.com/Products/Detail/79967514-65a7-4c58-b77b-691386310a96

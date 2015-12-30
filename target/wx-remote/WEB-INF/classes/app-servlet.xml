@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd  
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+        
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<context:annotation-config />
+	
+	
+	
+	
+	<!-- <mvc:annotation-driven/> -->
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">  
+			<!-- org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter 构造时默认初始化如下messageConverters -->
+            <beans:bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+            <beans:bean class="org.springframework.http.converter.StringHttpMessageConverter">
+            	<beans:property name="writeAcceptCharset" value="false" />
+            </beans:bean>
+            <beans:bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+            <beans:bean class="org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter"/>
+            <beans:ref bean="pageListAndDateJackson2HttpMessageConverter"/>
+        	<beans:bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+        </mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<beans:bean id="pageListAndDateJackson2HttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<beans:property name="objectMapper">
+			<beans:bean class="cn.cttic.sysframe.frame.support.mybatis.paginator.jackson2.PageListJsonMapper">
+				<beans:constructor-arg>
+					<beans:bean class="java.text.SimpleDateFormat">
+						<beans:constructor-arg value="yyyy-MM-dd HH:mm:ss" />
+					</beans:bean>
+				</beans:constructor-arg>
+			</beans:bean>
+		</beans:property>
+	</beans:bean>
+
+
+	
+	<!-- 自动搜索@Controller标注的类 -->  
+	<context:component-scan base-package="cn.cttic.intf.http.json,
+										  cn.cttic.pay.controller,cn.cttic.icar.controller" />
+	
+	
+	
+	<mvc:view-controller path="/" view-name="redirect:/index.jsp" />	
+	
+	
+	<!-- 对静态资源文件的访问,直接访问 -->	
+	<resources mapping="/resources/**" location="classpath:/WEB-INF/resources/,/WEB-INF/resources/" />
+	<resources mapping="/css/**" location="classpath:/WEB-INF/css/,/WEB-INF/css/" cache-period="120" />
+	<resources mapping="/images/**" location="classpath:/WEB-INF/images/,/WEB-INF/images/" cache-period="120" />
+	<resources mapping="/js/**" location="classpath:/WEB-INF/js/,/WEB-INF/js/"  cache-period="120" />
+	<resources mapping="/api-docs/**" location="classpath:/api-docs/"  cache-period="120" />
+	<resources mapping="/apidocs/**" location="/apidocs/"  cache-period="120" />
+	
+	<beans:bean class="cn.cttic.swager.MySwaggerConfig" ></beans:bean> 
+	<!--  
+	 <beans:bean id="tokenInterceptor" class="cn.cttic.common.TokenInterceptor"></beans:bean>      
+     <beans:bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">      
+        <beans:property name="interceptors">      
+            <beans:list>      
+                <beans:ref bean="tokenInterceptor"/>      
+            </beans:list>  
+        </beans:property>      
+    </beans:bean> 
+    --> 
+	<beans:bean class="cn.cttic.sysframe.common.exception.FrameHandlerExceptionResolver"/>
+</beans:beans>  

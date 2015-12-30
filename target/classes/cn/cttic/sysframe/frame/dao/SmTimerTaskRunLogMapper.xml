@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmTimerTaskRunLogMapper">
+	<resultMap id="BaseResultMap"
+		type="cn.cttic.sysframe.frame.domain.SmTimerTaskRunLog">
+		<result column="LOG_ID" property="logId" jdbcType="DECIMAL" />
+		<result column="TASK_ID" property="taskId" jdbcType="DECIMAL" />
+		<result column="RUN_TIME" property="runTime" jdbcType="TIMESTAMP" />
+		<result column="RESULT_CODE" property="resultCode" jdbcType="DECIMAL" />
+		<result column="RUN_RESULT" property="runResult" jdbcType="VARCHAR" />
+		<result column="INSTANCE_ID" property="instanceId" jdbcType="DECIMAL" />
+		<result column="END_TIME" property="endTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		LOG_ID, TASK_ID, RUN_TIME, RESULT_CODE, RUN_RESULT, INSTANCE_ID, END_TIME
+	</sql>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmTimerTaskRunLogExample">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_TIMER_TASK_RUN_LOG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<delete id="deleteByExample"
+		parameterType="cn.cttic.sysframe.frame.domain.SmTimerTaskRunLogExample">
+		delete from SM_TIMER_TASK_RUN_LOG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert" parameterType="cn.cttic.sysframe.frame.domain.SmTimerTaskRunLog">
+		insert into SM_TIMER_TASK_RUN_LOG (LOG_ID, TASK_ID, RUN_TIME,
+		RESULT_CODE, RUN_RESULT, INSTANCE_ID,
+		END_TIME)
+		values (#{logId,jdbcType=DECIMAL}, #{taskId,jdbcType=DECIMAL},
+		#{runTime,jdbcType=TIMESTAMP},
+		#{resultCode,jdbcType=DECIMAL}, #{runResult,jdbcType=VARCHAR}, #{instanceId,jdbcType=DECIMAL},
+		#{endTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="cn.cttic.sysframe.frame.domain.SmTimerTaskRunLog">
+		insert into SM_TIMER_TASK_RUN_LOG
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="logId != null">
+				LOG_ID,
+			</if>
+			<if test="taskId != null">
+				TASK_ID,
+			</if>
+			<if test="runTime != null">
+				RUN_TIME,
+			</if>
+			<if test="resultCode != null">
+				RESULT_CODE,
+			</if>
+			<if test="runResult != null">
+				RUN_RESULT,
+			</if>
+			<if test="instanceId != null">
+				INSTANCE_ID,
+			</if>
+			<if test="endTime != null">
+				END_TIME,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="logId != null">
+				#{logId,jdbcType=DECIMAL},
+			</if>
+			<if test="taskId != null">
+				#{taskId,jdbcType=DECIMAL},
+			</if>
+			<if test="runTime != null">
+				#{runTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="resultCode != null">
+				#{resultCode,jdbcType=DECIMAL},
+			</if>
+			<if test="runResult != null">
+				#{runResult,jdbcType=VARCHAR},
+			</if>
+			<if test="instanceId != null">
+				#{instanceId,jdbcType=DECIMAL},
+			</if>
+			<if test="endTime != null">
+				#{endTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample"
+		parameterType="cn.cttic.sysframe.frame.domain.SmTimerTaskRunLogExample"
+		resultType="java.lang.Integer">
+		select count(*) from SM_TIMER_TASK_RUN_LOG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update SM_TIMER_TASK_RUN_LOG
+		<set>
+			<if test="record.logId != null">
+				LOG_ID = #{record.logId,jdbcType=DECIMAL},
+			</if>
+			<if test="record.taskId != null">
+				TASK_ID = #{record.taskId,jdbcType=DECIMAL},
+			</if>
+			<if test="record.runTime != null">
+				RUN_TIME = #{record.runTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.resultCode != null">
+				RESULT_CODE = #{record.resultCode,jdbcType=DECIMAL},
+			</if>
+			<if test="record.runResult != null">
+				RUN_RESULT = #{record.runResult,jdbcType=VARCHAR},
+			</if>
+			<if test="record.instanceId != null">
+				INSTANCE_ID = #{record.instanceId,jdbcType=DECIMAL},
+			</if>
+			<if test="record.endTime != null">
+				END_TIME = #{record.endTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update SM_TIMER_TASK_RUN_LOG
+		set LOG_ID = #{record.logId,jdbcType=DECIMAL},
+		TASK_ID = #{record.taskId,jdbcType=DECIMAL},
+		RUN_TIME = #{record.runTime,jdbcType=TIMESTAMP},
+		RESULT_CODE = #{record.resultCode,jdbcType=DECIMAL},
+		RUN_RESULT = #{record.runResult,jdbcType=VARCHAR},
+		INSTANCE_ID = #{record.instanceId,jdbcType=DECIMAL},
+		END_TIME = #{record.endTime,jdbcType=TIMESTAMP}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<select id="selectByPrimaryKey2" parameterType="java.lang.Long"
+		resultType="map">
+		select b.*,a.task_name from sm_timer_task_def
+		a,sm_timer_task_run_log b
+		where a.task_id=b.task_id and
+		b.log_id=#{logId,jdbcType=DECIMAL}
+	</select>
+	<select id="queryTaskLogList" resultType="map" parameterType="map">
+		select b.*,a.task_name from sm_timer_task_def a,sm_timer_task_run_log
+		b
+		where a.task_id=b.task_id
+		<if test="taskName != null and ''!=taskName">
+			and a.task_name like '%${taskName}%'
+		</if>
+		<if test="resultCode != null and ''!=resultCode ">
+			and b.result_code =#{resultCode}
+		</if>
+		order by a.task_name asc,b.run_time desc
+	</select>
+</mapper>

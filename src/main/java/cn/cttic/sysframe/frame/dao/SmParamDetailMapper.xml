@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmParamDetailMapper">
+	<resultMap id="BaseResultMap" type="cn.cttic.sysframe.frame.domain.SmParamDetail">
+		<id column="TYPE_CODE" property="typeCode" jdbcType="VARCHAR" />
+		<id column="TYPE_PARAM_CODE" property="typeParamCode" jdbcType="VARCHAR" />
+		<id column="LANGUAGE_TYPE" property="languageType" jdbcType="VARCHAR" />
+		<result column="TYPE_PARAM_DESC" property="typeParamDesc"
+			jdbcType="VARCHAR" />
+		<result column="PARENT_TYPE_CODE" property="parentTypeCode"
+			jdbcType="VARCHAR" />
+		<result column="PARENT_PARAM_CODE" property="parentParamCode"
+			jdbcType="VARCHAR" />
+		<result column="STATE" property="state" jdbcType="VARCHAR" />
+		<result column="SYSTEM_ID" property="systemId" jdbcType="VARCHAR" />
+		<result column="PARAM_ORDER" property="paramOrder" jdbcType="DECIMAL" />
+		<result column="OPER_ID" property="operId" jdbcType="VARCHAR" />
+		<result column="MODIFY_DATE" property="modifyDate" jdbcType="TIMESTAMP" />
+		<result column="SOURCE_CODE" property="sourceCode" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		TYPE_CODE, TYPE_PARAM_CODE, LANGUAGE_TYPE, TYPE_PARAM_DESC, PARENT_TYPE_CODE,
+		PARENT_PARAM_CODE,
+		STATE, SYSTEM_ID, PARAM_ORDER, OPER_ID, MODIFY_DATE, SOURCE_CODE
+	</sql>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmParamDetailExample">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_PARAM_DETAIL
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmParamDetailKey">
+		select
+		<include refid="Base_Column_List" />
+		from SM_PARAM_DETAIL
+		where TYPE_CODE = #{typeCode,jdbcType=VARCHAR}
+		and TYPE_PARAM_CODE = #{typeParamCode,jdbcType=VARCHAR}
+		and LANGUAGE_TYPE = #{languageType,jdbcType=VARCHAR}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="cn.cttic.sysframe.frame.domain.SmParamDetailKey">
+		delete from SM_PARAM_DETAIL
+		where TYPE_CODE = #{typeCode,jdbcType=VARCHAR}
+		and TYPE_PARAM_CODE = #{typeParamCode,jdbcType=VARCHAR}
+		and LANGUAGE_TYPE = #{languageType,jdbcType=VARCHAR}
+	</delete>
+	<delete id="deleteByExample" parameterType="cn.cttic.sysframe.frame.domain.SmParamDetailExample">
+		delete from SM_PARAM_DETAIL
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert" parameterType="cn.cttic.sysframe.frame.domain.SmParamDetail">
+		insert into SM_PARAM_DETAIL (TYPE_CODE, TYPE_PARAM_CODE,
+		LANGUAGE_TYPE,
+		TYPE_PARAM_DESC, PARENT_TYPE_CODE, PARENT_PARAM_CODE,
+		STATE, SYSTEM_ID, PARAM_ORDER,
+		OPER_ID, MODIFY_DATE, SOURCE_CODE
+		)
+		values (#{typeCode,jdbcType=VARCHAR}, #{typeParamCode,jdbcType=VARCHAR},
+		#{languageType,jdbcType=VARCHAR},
+		#{typeParamDesc,jdbcType=VARCHAR}, #{parentTypeCode,jdbcType=VARCHAR},
+		#{parentParamCode,jdbcType=VARCHAR},
+		#{state,jdbcType=VARCHAR}, #{systemId,jdbcType=VARCHAR}, #{paramOrder,jdbcType=DECIMAL},
+		#{operId,jdbcType=VARCHAR}, #{modifyDate,jdbcType=TIMESTAMP},
+		#{sourceCode,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="cn.cttic.sysframe.frame.domain.SmParamDetail">
+		insert into SM_PARAM_DETAIL
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="typeCode != null">
+				TYPE_CODE,
+			</if>
+			<if test="typeParamCode != null">
+				TYPE_PARAM_CODE,
+			</if>
+			<if test="languageType != null">
+				LANGUAGE_TYPE,
+			</if>
+			<if test="typeParamDesc != null">
+				TYPE_PARAM_DESC,
+			</if>
+			<if test="parentTypeCode != null">
+				PARENT_TYPE_CODE,
+			</if>
+			<if test="parentParamCode != null">
+				PARENT_PARAM_CODE,
+			</if>
+			<if test="state != null">
+				STATE,
+			</if>
+			<if test="systemId != null">
+				SYSTEM_ID,
+			</if>
+			<if test="paramOrder != null">
+				PARAM_ORDER,
+			</if>
+			<if test="operId != null">
+				OPER_ID,
+			</if>
+			<if test="modifyDate != null">
+				MODIFY_DATE,
+			</if>
+			<if test="sourceCode != null">
+				SOURCE_CODE,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="typeCode != null">
+				#{typeCode,jdbcType=VARCHAR},
+			</if>
+			<if test="typeParamCode != null">
+				#{typeParamCode,jdbcType=VARCHAR},
+			</if>
+			<if test="languageType != null">
+				#{languageType,jdbcType=VARCHAR},
+			</if>
+			<if test="typeParamDesc != null">
+				#{typeParamDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="parentTypeCode != null">
+				#{parentTypeCode,jdbcType=VARCHAR},
+			</if>
+			<if test="parentParamCode != null">
+				#{parentParamCode,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				#{state,jdbcType=VARCHAR},
+			</if>
+			<if test="systemId != null">
+				#{systemId,jdbcType=VARCHAR},
+			</if>
+			<if test="paramOrder != null">
+				#{paramOrder,jdbcType=DECIMAL},
+			</if>
+			<if test="operId != null">
+				#{operId,jdbcType=VARCHAR},
+			</if>
+			<if test="modifyDate != null">
+				#{modifyDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="sourceCode != null">
+				#{sourceCode,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample" parameterType="cn.cttic.sysframe.frame.domain.SmParamDetailExample"
+		resultType="java.lang.Integer">
+		select count(*) from SM_PARAM_DETAIL
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update SM_PARAM_DETAIL
+		<set>
+			<if test="record.typeCode != null">
+				TYPE_CODE = #{record.typeCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.typeParamCode != null">
+				TYPE_PARAM_CODE = #{record.typeParamCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.languageType != null">
+				LANGUAGE_TYPE = #{record.languageType,jdbcType=VARCHAR},
+			</if>
+			<if test="record.typeParamDesc != null">
+				TYPE_PARAM_DESC = #{record.typeParamDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="record.parentTypeCode != null">
+				PARENT_TYPE_CODE = #{record.parentTypeCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.parentParamCode != null">
+				PARENT_PARAM_CODE = #{record.parentParamCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.state != null">
+				STATE = #{record.state,jdbcType=VARCHAR},
+			</if>
+			<if test="record.systemId != null">
+				SYSTEM_ID = #{record.systemId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.paramOrder != null">
+				PARAM_ORDER = #{record.paramOrder,jdbcType=DECIMAL},
+			</if>
+			<if test="record.operId != null">
+				OPER_ID = #{record.operId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.modifyDate != null">
+				MODIFY_DATE = #{record.modifyDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.sourceCode != null">
+				SOURCE_CODE = #{record.sourceCode,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update SM_PARAM_DETAIL
+		set TYPE_CODE = #{record.typeCode,jdbcType=VARCHAR},
+		TYPE_PARAM_CODE = #{record.typeParamCode,jdbcType=VARCHAR},
+		LANGUAGE_TYPE = #{record.languageType,jdbcType=VARCHAR},
+		TYPE_PARAM_DESC = #{record.typeParamDesc,jdbcType=VARCHAR},
+		PARENT_TYPE_CODE = #{record.parentTypeCode,jdbcType=VARCHAR},
+		PARENT_PARAM_CODE = #{record.parentParamCode,jdbcType=VARCHAR},
+		STATE = #{record.state,jdbcType=VARCHAR},
+		SYSTEM_ID = #{record.systemId,jdbcType=VARCHAR},
+		PARAM_ORDER = #{record.paramOrder,jdbcType=DECIMAL},
+		OPER_ID = #{record.operId,jdbcType=VARCHAR},
+		MODIFY_DATE = #{record.modifyDate,jdbcType=TIMESTAMP},
+		SOURCE_CODE = #{record.sourceCode,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.cttic.sysframe.frame.domain.SmParamDetail">
+		update SM_PARAM_DETAIL
+		<set>
+			<if test="typeParamDesc != null">
+				TYPE_PARAM_DESC = #{typeParamDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="parentTypeCode != null">
+				PARENT_TYPE_CODE = #{parentTypeCode,jdbcType=VARCHAR},
+			</if>
+			<if test="parentParamCode != null">
+				PARENT_PARAM_CODE = #{parentParamCode,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				STATE = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="systemId != null">
+				SYSTEM_ID = #{systemId,jdbcType=VARCHAR},
+			</if>
+			<if test="paramOrder != null">
+				PARAM_ORDER = #{paramOrder,jdbcType=DECIMAL},
+			</if>
+			<if test="operId != null">
+				OPER_ID = #{operId,jdbcType=VARCHAR},
+			</if>
+			<if test="modifyDate != null">
+				MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="sourceCode != null">
+				SOURCE_CODE = #{sourceCode,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where TYPE_CODE = #{typeCode,jdbcType=VARCHAR}
+		and TYPE_PARAM_CODE = #{typeParamCode,jdbcType=VARCHAR}
+		and LANGUAGE_TYPE = #{languageType,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.cttic.sysframe.frame.domain.SmParamDetail">
+		update SM_PARAM_DETAIL
+		set TYPE_PARAM_DESC = #{typeParamDesc,jdbcType=VARCHAR},
+		PARENT_TYPE_CODE = #{parentTypeCode,jdbcType=VARCHAR},
+		PARENT_PARAM_CODE = #{parentParamCode,jdbcType=VARCHAR},
+		STATE = #{state,jdbcType=VARCHAR},
+		SYSTEM_ID = #{systemId,jdbcType=VARCHAR},
+		PARAM_ORDER = #{paramOrder,jdbcType=DECIMAL},
+		OPER_ID = #{operId,jdbcType=VARCHAR},
+		MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP},
+		SOURCE_CODE = #{sourceCode,jdbcType=VARCHAR}
+		where TYPE_CODE = #{typeCode,jdbcType=VARCHAR}
+		and TYPE_PARAM_CODE = #{typeParamCode,jdbcType=VARCHAR}
+		and LANGUAGE_TYPE = #{languageType,jdbcType=VARCHAR}
+	</update>
+	<!-- 自定义SQL -->
+	<resultMap id="AllResultMap" type="cn.cttic.sysframe.frame.model.SmParamModel">
+		<id column="TYPE_CODE" property="typeCode" jdbcType="VARCHAR" />
+		<id column="TYPE_DESC" property="typeDesc" jdbcType="VARCHAR" />
+		<id column="TYPE_PARAM_CODE" property="typeParamCode" jdbcType="VARCHAR" />
+		<id column="LANGUAGE_TYPE" property="languageType" jdbcType="VARCHAR" />
+		<result column="TYPE_PARAM_DESC" property="typeParamDesc"
+			jdbcType="VARCHAR" />
+		<result column="PARENT_TYPE_CODE" property="parentTypeCode"
+			jdbcType="VARCHAR" />
+		<result column="PARENT_PARAM_CODE" property="parentParamCode"
+			jdbcType="VARCHAR" />
+		<result column="STATE" property="state" jdbcType="VARCHAR" />
+		<result column="SYSTEM_ID" property="systemId" jdbcType="VARCHAR" />
+		<result column="PARAM_ORDER" property="paramOrder" jdbcType="DECIMAL" />
+		<result column="OPER_ID" property="operId" jdbcType="VARCHAR" />
+		<result column="MODIFY_DATE" property="modifyDate" jdbcType="TIMESTAMP" />
+		<result column="SOURCE_CODE" property="sourceCode" jdbcType="VARCHAR" />
+		<result column="PARAM_TYPE" property="paramType" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="selectBySelective" parameterType="cn.cttic.sysframe.frame.model.SmParamModel"
+		resultMap="AllResultMap">
+		select t2.PARAM_TYPE, t2.TYPE_DESC, t1.*
+		from SM_PARAM_DETAIL t1, SM_PARAM_DEFINE t2
+		<where>
+			t1.type_code = t2.type_code(+)
+			<if test="typeDesc != null and typeDesc != ''">
+				and t2.TYPE_DESC like #{typeDesc,jdbcType=VARCHAR}
+			</if>
+			<if test="paramType != null and paramType != ''">
+				and t2.PARAM_TYPE = #{paramType,jdbcType=VARCHAR}
+			</if>
+			<if test="typeCode != null and typeCode != ''">
+				and t1.TYPE_CODE = #{typeCode,jdbcType=VARCHAR}
+			</if>
+			<if test="typeParamCode != null and typeParamCode != ''">
+				and t1.TYPE_PARAM_CODE = #{typeParamCode,jdbcType=VARCHAR}
+			</if>
+			<if test="languageType != null and languageType != ''">
+				and t1.LANGUAGE_TYPE = #{languageType,jdbcType=VARCHAR}
+			</if>
+			<if test="typeParamDesc != null and typeParamDesc != ''">
+				and t1.TYPE_PARAM_DESC like #{typeParamDesc,jdbcType=VARCHAR}
+			</if>
+			<if test="parentTypeCode != null and parentTypeCode != ''">
+				and t1.PARENT_TYPE_CODE = #{parentTypeCode,jdbcType=VARCHAR}
+			</if>
+			<if test="parentParamCode != null and parentParamCode != ''">
+				and t1.PARENT_PARAM_CODE = #{parentParamCode,jdbcType=VARCHAR}
+			</if>
+			<if test="state != null and state != ''">
+				and t1.STATE = #{state,jdbcType=VARCHAR}
+			</if>
+			<if test="systemId != null and systemId != ''">
+				and t1.SYSTEM_ID = #{systemId,jdbcType=VARCHAR}
+			</if>
+			<if test="paramOrder != null">
+				and t1.PARAM_ORDER = #{paramOrder,jdbcType=DECIMAL}
+			</if>
+			<if test="operId != null and operId != ''">
+				and t1.OPER_ID = #{operId,jdbcType=VARCHAR}
+			</if>
+			<if test="modifyDate != null">
+				and t1.MODIFY_DATE = #{modifyDate,jdbcType=TIMESTAMP}
+			</if>
+			<if test="sourceCode != null and sourceCode != ''">
+				and t1.SOURCE_CODE = #{sourceCode,jdbcType=VARCHAR}
+			</if>
+		</where>
+	</select>
+	<select id="selectSmParamModelByPrimaryKey" parameterType="cn.cttic.sysframe.frame.domain.SmParamDetailKey"
+		resultMap="AllResultMap">
+		select t2.PARAM_TYPE, t2.TYPE_DESC, t1.*
+		from SM_PARAM_DETAIL t1, SM_PARAM_DEFINE t2
+		<where>
+			t1.type_code = t2.type_code(+)
+			and t1.TYPE_CODE = #{typeCode,jdbcType=VARCHAR}
+			and t1.TYPE_PARAM_CODE = #{typeParamCode,jdbcType=VARCHAR}
+			and t1.LANGUAGE_TYPE = #{languageType,jdbcType=VARCHAR}
+		</where>
+	</select>
+</mapper>

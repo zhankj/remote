@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmJobConfigMapper">
+	<resultMap id="BaseResultMap" type="cn.cttic.sysframe.frame.domain.SmJobConfig">
+		<id column="JOB_CODE" property="jobCode" jdbcType="VARCHAR" />
+		<result column="JOB_NAME" property="jobName" jdbcType="VARCHAR" />
+		<result column="CLASS_PATH" property="classPath" jdbcType="VARCHAR" />
+		<result column="STATE" property="state" jdbcType="VARCHAR" />
+		<result column="NOTE" property="note" jdbcType="VARCHAR" />
+		<result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		JOB_CODE, JOB_NAME, CLASS_PATH, STATE, NOTE, CREATE_DATE
+	</sql>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmJobConfigExample">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_JOB_CONFIG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from SM_JOB_CONFIG
+		where JOB_CODE = #{jobCode,jdbcType=VARCHAR}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from SM_JOB_CONFIG
+		where JOB_CODE = #{jobCode,jdbcType=VARCHAR}
+	</delete>
+	<delete id="deleteByExample" parameterType="cn.cttic.sysframe.frame.domain.SmJobConfigExample">
+		delete from SM_JOB_CONFIG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert" parameterType="cn.cttic.sysframe.frame.domain.SmJobConfig">
+		insert into SM_JOB_CONFIG (JOB_CODE, JOB_NAME, CLASS_PATH,
+		STATE, NOTE, CREATE_DATE
+		)
+		values (#{jobCode,jdbcType=VARCHAR}, #{jobName,jdbcType=VARCHAR},
+		#{classPath,jdbcType=VARCHAR},
+		#{state,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="cn.cttic.sysframe.frame.domain.SmJobConfig">
+		insert into SM_JOB_CONFIG
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobCode != null">
+				JOB_CODE,
+			</if>
+			<if test="jobName != null">
+				JOB_NAME,
+			</if>
+			<if test="classPath != null">
+				CLASS_PATH,
+			</if>
+			<if test="state != null">
+				STATE,
+			</if>
+			<if test="note != null">
+				NOTE,
+			</if>
+			<if test="createDate != null">
+				CREATE_DATE,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobCode != null">
+				#{jobCode,jdbcType=VARCHAR},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="classPath != null">
+				#{classPath,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				#{state,jdbcType=VARCHAR},
+			</if>
+			<if test="note != null">
+				#{note,jdbcType=VARCHAR},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample" parameterType="cn.cttic.sysframe.frame.domain.SmJobConfigExample"
+		resultType="java.lang.Integer">
+		select count(*) from SM_JOB_CONFIG
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update SM_JOB_CONFIG
+		<set>
+			<if test="record.jobCode != null">
+				JOB_CODE = #{record.jobCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.jobName != null">
+				JOB_NAME = #{record.jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.classPath != null">
+				CLASS_PATH = #{record.classPath,jdbcType=VARCHAR},
+			</if>
+			<if test="record.state != null">
+				STATE = #{record.state,jdbcType=VARCHAR},
+			</if>
+			<if test="record.note != null">
+				NOTE = #{record.note,jdbcType=VARCHAR},
+			</if>
+			<if test="record.createDate != null">
+				CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update SM_JOB_CONFIG
+		set JOB_CODE = #{record.jobCode,jdbcType=VARCHAR},
+		JOB_NAME = #{record.jobName,jdbcType=VARCHAR},
+		CLASS_PATH = #{record.classPath,jdbcType=VARCHAR},
+		STATE = #{record.state,jdbcType=VARCHAR},
+		NOTE = #{record.note,jdbcType=VARCHAR},
+		CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.cttic.sysframe.frame.domain.SmJobConfig">
+		update SM_JOB_CONFIG
+		<set>
+			<if test="jobName != null">
+				JOB_NAME = #{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="classPath != null">
+				CLASS_PATH = #{classPath,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				STATE = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="note != null">
+				NOTE = #{note,jdbcType=VARCHAR},
+			</if>
+			<if test="createDate != null">
+				CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where JOB_CODE = #{jobCode,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.cttic.sysframe.frame.domain.SmJobConfig">
+		update SM_JOB_CONFIG
+		set JOB_NAME = #{jobName,jdbcType=VARCHAR},
+		CLASS_PATH = #{classPath,jdbcType=VARCHAR},
+		STATE = #{state,jdbcType=VARCHAR},
+		NOTE = #{note,jdbcType=VARCHAR},
+		CREATE_DATE = #{createDate,jdbcType=TIMESTAMP}
+		where JOB_CODE = #{jobCode,jdbcType=VARCHAR}
+	</update>
+</mapper>

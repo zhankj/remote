@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- MySQL driver.jar 
+	<classPathEntry location="C:/Users/dong/.m2/repository/mysql/mysql-connector-java/5.1.26/mysql-connector-java-5.1.26.jar"/> -->
+	<!-- Oracle driver.jar-->
+
+	<context id="DatabaseTables" targetRuntime="MyBatis3">
+		<!--  替换Example类名
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Criteria" />
+		</plugin>
+		-->
+		<!-- 当设置为false时，会对每个mapper的元素产生时间戳，便于合并代码 -->
+		<!-- 当设置为true时，剔除了时间戳，不能合并代码，在重新生成时，xml文件会被追加生成 -->
+		<!-- 此处设置为false -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<!-- MySQL datalink 
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+			connectionURL="jdbc:mysql://localhost:3306/portal" userId="root" password="root"> 
+		</jdbcConnection> 
+		<property name="rootClass" value="cn.cttic.wtms.order.domain.base.BaseEntity" />
+		-->
+		<!-- Oracle datalink -->
+		<jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@10.0.0.42:1521:orcl" userId="APPROVAL" password="APPROVAL">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="cn.cttic.wtms.common.order.domain"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+			<property name="rootClass" value="cn.cttic.wtms.common.order.domain.base.BaseEntity" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="cn.cttic.wtms.common.order.dao"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+  
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.cttic.wtms.common.order.dao" targetProject="src\main\java">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		<!--  
+		<table tableName="ORD_DOC_INFO" domainObjectName="OrdDocInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    
+	    <table tableName="ORD_HANDLING_LOG" domainObjectName="OrdHandlingLog">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_WORK_ORDER_ITEM" domainObjectName="OrdWorkOrderItem">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	     <table tableName="ORD_TRAFFIC_RECORD" domainObjectName="OrdTrafficRecord">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_SHIP_PARAM_INFO" domainObjectName="OrdShipParamInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_SHIP_MANAGER_INFO" domainObjectName="OrdShipManagerInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_SHIP_FILE_INFO" domainObjectName="OrdShipFileInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_SHIP_BIZ_SCOPE" domainObjectName="OrdShipBizScope">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_SHIP_BASE_INFO" domainObjectName="OrdShipBaseInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_SHIP_AUDIT" domainObjectName="OrdShipAudit">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_PORT_WAREHOUSE" domainObjectName="OrdPortWarehouse">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_PORT_LICENSE" domainObjectName="OrdPortLicense">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_PORT_INVESTMENT" domainObjectName="OrdPortInvestment">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_PORT_INFO" domainObjectName="OrdPortInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_PORT_HANDLING" domainObjectName="OrdPortHandling">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_PORT_BERTH" domainObjectName="OrdPortBerth">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_STAFF" domainObjectName="OrdEntStaff">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_SPACE" domainObjectName="OrdEntSpace">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_SHIP_SVC_COM_BRANCH" domainObjectName="OrdEntShipSvcComBranch">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_SHIP_SVC_COMPANY" domainObjectName="OrdEntShipSvcCompany">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_SHIP_CAPACITY" domainObjectName="OrdEntShipCapacity">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_PARENT_COMPANY_BIZ" domainObjectName="OrdEntParentCompanyBiz">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_PARENT_COMPANY" domainObjectName="OrdEntParentCompany">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_NO_SHIP_TRANSPORT" domainObjectName="OrdEntNoShipTransport">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_MGMT_SHIP_INFO" domainObjectName="OrdEntMgmtShipInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_LINER_ROUTE_SHIP" domainObjectName="OrdEntLinerRouteShip">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_LINER_ROUTE" domainObjectName="OrdEntLinerRoute">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_LINER_PRICE_SCHG" domainObjectName="OrdEntLinerPriceSchg">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_LINER_PRICE" domainObjectName="OrdEntLinerPrice">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_LINER_INVEST_AGREE" domainObjectName="OrdEntLinerInvestAgree">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_LICENSE_FILING" domainObjectName="OrdEntLicenseFiling">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_INVESTOR" domainObjectName="OrdEntInvestor">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_INT_SHIP_FILING" domainObjectName="OrdEntIntShipFiling">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_INT_PROXY_FILING" domainObjectName="OrdEntIntProxyFiling">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_INFO" domainObjectName="OrdEntInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_CONTACT_AGENCY" domainObjectName="OrdEntContactAgency">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_AUDIT" domainObjectName="OrdEntAudit">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_ACCIDENTS" domainObjectName="OrdEntAccidents">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+
+	    <table tableName="ORD_CHECK_RECORD" domainObjectName="OrdCheckRecord">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_CERTI_ATTR_RELA" domainObjectName="OrdCertiAttrRela">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_CERTIFICATE_SHIP" domainObjectName="OrdCertificateShip">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+		   <table tableName="ORD_VOLU_IRRE_SHIP" domainObjectName="OrdVoluIrreShip">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+			     <table tableName="ORD_CERTI_CHECK_RECORD" domainObjectName="OrdCertiCheckRecord">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	     <table tableName="ORD_CERTI_TRAFFIC_RECORD" domainObjectName="OrdCertiTrafficRecord">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	       <table tableName="ORD_VOLU_PRICE_INFO" domainObjectName="OrdVoluPriceInfo">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	   
+	    <table tableName="ord_table_insert_flag" domainObjectName="OrdTableInsertFlag">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_WORK_ORDER" domainObjectName="OrdWorkOrder">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_BIZ_SCOPE" domainObjectName="OrdEntBizScope">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_DETAIL" domainObjectName="OrdDetail">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_CERTIFICATE" domainObjectName="OrdCertificate">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    
+		<table tableName="ORD_ENT_BIZ_SCOPE" domainObjectName="OrdEntBizScope">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    <table tableName="ORD_ENT_BRANCH" domainObjectName="OrdEntBranch">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    -->
+	    <table tableName="ORD_ENT_LINER_PRICE" domainObjectName="OrdEntLinerPrice">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    
+		</context>
+</generatorConfiguration>

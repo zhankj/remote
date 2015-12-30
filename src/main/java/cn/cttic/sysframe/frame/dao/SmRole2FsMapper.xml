@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmRole2FsMapper">
+	<resultMap id="BaseResultMap" type="cn.cttic.sysframe.frame.domain.SmRole2FsKey">
+		<id column="ROLE_ID" property="roleId" jdbcType="VARCHAR" />
+		<id column="FS_ID" property="fsId" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		ROLE_ID, FS_ID
+	</sql>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmRole2FsCriteria">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_ROLE_2_FS
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="cn.cttic.sysframe.frame.domain.SmRole2FsKey">
+		delete from SM_ROLE_2_FS
+		where ROLE_ID = #{roleId,jdbcType=VARCHAR}
+		and FS_ID = #{fsId,jdbcType=VARCHAR}
+	</delete>
+	<delete id="deleteByExample" parameterType="cn.cttic.sysframe.frame.domain.SmRole2FsCriteria">
+		delete from SM_ROLE_2_FS
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert" parameterType="cn.cttic.sysframe.frame.domain.SmRole2FsKey">
+		insert into SM_ROLE_2_FS (ROLE_ID, FS_ID)
+		values (#{roleId,jdbcType=VARCHAR}, #{fsId,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="cn.cttic.sysframe.frame.domain.SmRole2FsKey">
+		insert into SM_ROLE_2_FS
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="roleId != null">
+				ROLE_ID,
+			</if>
+			<if test="fsId != null">
+				FS_ID,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="roleId != null">
+				#{roleId,jdbcType=VARCHAR},
+			</if>
+			<if test="fsId != null">
+				#{fsId,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample" parameterType="cn.cttic.sysframe.frame.domain.SmRole2FsCriteria"
+		resultType="java.lang.Integer">
+		select count(*) from SM_ROLE_2_FS
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update SM_ROLE_2_FS
+		<set>
+			<if test="record.roleId != null">
+				ROLE_ID = #{record.roleId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.fsId != null">
+				FS_ID = #{record.fsId,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update SM_ROLE_2_FS
+		set ROLE_ID = #{record.roleId,jdbcType=VARCHAR},
+		FS_ID = #{record.fsId,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<select id="checkRole2FsByFsId" parameterType="java.lang.String"
+		resultType="java.lang.String">
+		select count(*) from SM_ROLE_2_FS where fs_id=#{fsId}
+	</select>
+</mapper>

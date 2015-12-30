@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmGroupMapper">
+	<resultMap id="BaseResultMap" type="cn.cttic.sysframe.frame.domain.SmGroup">
+		<id column="GROUP_ID" property="groupId" jdbcType="DECIMAL" />
+		<result column="GROUP_NAME" property="groupName" jdbcType="VARCHAR" />
+		<result column="STATE" property="state" jdbcType="VARCHAR" />
+		<result column="GROUP_DESC" property="groupDesc" jdbcType="VARCHAR" />
+		<result column="OPER_ID" property="operId" jdbcType="VARCHAR" />
+		<result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+		<result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
+		<result column="GROUP_TYPE" property="groupType" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		GROUP_ID, GROUP_NAME, STATE, GROUP_DESC, OPER_ID, CREATE_DATE, UPDATE_DATE,
+		GROUP_TYPE
+	</sql>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmGroupExample">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_GROUP
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from SM_GROUP
+		where GROUP_ID = #{groupId,jdbcType=DECIMAL}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from SM_GROUP
+		where GROUP_ID = #{groupId,jdbcType=DECIMAL}
+	</delete>
+	<delete id="deleteByExample" parameterType="cn.cttic.sysframe.frame.domain.SmGroupExample">
+		delete from SM_GROUP
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert" parameterType="cn.cttic.sysframe.frame.domain.SmGroup">
+		insert into SM_GROUP (GROUP_ID, GROUP_NAME, STATE,
+		GROUP_DESC, OPER_ID, CREATE_DATE,
+		UPDATE_DATE, GROUP_TYPE)
+		values (#{groupId,jdbcType=DECIMAL}, #{groupName,jdbcType=VARCHAR},
+		#{state,jdbcType=CHAR},
+		#{groupDesc,jdbcType=VARCHAR}, #{operId,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP},
+		#{updateDate,jdbcType=TIMESTAMP}, #{groupType,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="cn.cttic.sysframe.frame.domain.SmGroup">
+		insert into SM_GROUP
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="groupId != null">
+				GROUP_ID,
+			</if>
+			<if test="groupName != null">
+				GROUP_NAME,
+			</if>
+			<if test="state != null">
+				STATE,
+			</if>
+			<if test="groupDesc != null">
+				GROUP_DESC,
+			</if>
+			<if test="operId != null">
+				OPER_ID,
+			</if>
+			<if test="createDate != null">
+				CREATE_DATE,
+			</if>
+			<if test="updateDate != null">
+				UPDATE_DATE,
+			</if>
+			<if test="groupType != null">
+				GROUP_TYPE,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="groupId != null">
+				#{groupId,jdbcType=DECIMAL},
+			</if>
+			<if test="groupName != null">
+				#{groupName,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				#{state,jdbcType=CHAR},
+			</if>
+			<if test="groupDesc != null">
+				#{groupDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="operId != null">
+				#{operId,jdbcType=VARCHAR},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateDate != null">
+				#{updateDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="groupType != null">
+				#{groupType,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample" parameterType="cn.cttic.sysframe.frame.domain.SmGroupExample"
+		resultType="java.lang.Integer">
+		select count(*) from SM_GROUP
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update SM_GROUP
+		<set>
+			<if test="record.groupId != null">
+				GROUP_ID = #{record.groupId,jdbcType=DECIMAL},
+			</if>
+			<if test="record.groupName != null">
+				GROUP_NAME = #{record.groupName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.state != null">
+				STATE = #{record.state,jdbcType=CHAR},
+			</if>
+			<if test="record.groupDesc != null">
+				GROUP_DESC = #{record.groupDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="record.operId != null">
+				OPER_ID = #{record.operId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.createDate != null">
+				CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.updateDate != null">
+				UPDATE_DATE = #{record.updateDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.groupType != null">
+				GROUP_TYPE = #{record.groupType,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update SM_GROUP
+		set GROUP_ID = #{record.groupId,jdbcType=DECIMAL},
+		GROUP_NAME = #{record.groupName,jdbcType=VARCHAR},
+		STATE = #{record.state,jdbcType=CHAR},
+		GROUP_DESC = #{record.groupDesc,jdbcType=VARCHAR},
+		OPER_ID = #{record.operId,jdbcType=VARCHAR},
+		CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+		UPDATE_DATE = #{record.updateDate,jdbcType=TIMESTAMP},
+		GROUP_TYPE = #{record.groupType,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.cttic.sysframe.frame.domain.SmGroup">
+		update SM_GROUP
+		<set>
+			<if test="groupName != null">
+				GROUP_NAME = #{groupName,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				STATE = #{state,jdbcType=CHAR},
+			</if>
+			<if test="groupDesc != null">
+				GROUP_DESC = #{groupDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="operId != null">
+				OPER_ID = #{operId,jdbcType=VARCHAR},
+			</if>
+			<if test="createDate != null">
+				CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateDate != null">
+				UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="groupType != null">
+				GROUP_TYPE = #{groupType,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where GROUP_ID = #{groupId,jdbcType=DECIMAL}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.cttic.sysframe.frame.domain.SmGroup">
+		update SM_GROUP
+		set GROUP_NAME = #{groupName,jdbcType=VARCHAR},
+		STATE = #{state,jdbcType=CHAR},
+		GROUP_DESC = #{groupDesc,jdbcType=VARCHAR},
+		OPER_ID = #{operId,jdbcType=VARCHAR},
+		CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+		UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+		GROUP_TYPE = #{groupType,jdbcType=VARCHAR}
+		where GROUP_ID = #{groupId,jdbcType=DECIMAL}
+	</update>
+
+
+
+	<!-- 自定义sql -->
+	<select id="query" parameterType="cn.cttic.sysframe.frame.domain.SmGroupExample"
+		resultMap="BaseResultMap">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_GROUP
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+
+	<!-- 自定义sql -->
+	<select id="queryGroup" parameterType="map" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from SM_GROUP t
+		<where>
+			t.STATE='Y'
+			<if test="operId != null">
+				and EXISTS ( SELECT 1 FROM SM_GROUP_2_OPER o WHERE
+				t.group_id = o.group_id AND o.state='Y' and o.oper_id =
+				#{operId,jdbcType=VARCHAR} )
+			</if>
+			<if test="groupType != null">
+				and t.GROUP_TYPE = #{groupType,jdbcType=VARCHAR}
+			</if>
+		</where>
+	</select>
+
+
+	<!-- 自定义sql map -->
+	<select id="queryPage" parameterType="map" resultType="map">
+		select
+		t.GROUP_ID, t.GROUP_NAME, t.STATE, t.GROUP_DESC, t.OPER_ID, t.CREATE_DATE,
+		t.UPDATE_DATE,
+		t.GROUP_TYPE,(select count(1) from sm_group_2_oper o where o.GROUP_ID = t.GROUP_ID) as num
+		from SM_GROUP t
+		<where>
+			<if test="groupName != null">
+				and t.GROUP_NAME like #{groupName,jdbcType=VARCHAR}
+			</if>
+			<if test="groupType != null">
+				and t.GROUP_TYPE = #{groupType,jdbcType=VARCHAR}
+			</if>
+
+			<if test="memberName != null">
+				and EXISTS ( SELECT 1 FROM SM_GROUP_2_OPER o, sm_oper p, sm_staff s
+				WHERE
+				t.group_id = o.group_id and o.oper_id = p.oper_id and p.staff_id = s.staff_id
+				AND o.state='Y' and p.state='Y' and s.state='Y' and s.staff_name
+				like #{memberName,jdbcType=VARCHAR} )
+			</if>
+		</where>
+	</select>
+
+</mapper>

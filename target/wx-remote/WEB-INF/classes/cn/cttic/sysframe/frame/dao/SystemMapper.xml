@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.cttic.sysframe.frame.dao.SystemMapper">
+
+	<select id="getSequenceName" parameterType="map" resultType="String">
+		select SEQUENCE_NAME from SM_SEQUENCE where TABLE_NAME = #{tableName}
+		and COLUMN_NAME = #{columnName}
+	</select>
+	<select id="generateId" parameterType="map" resultType="long"
+		useCache="false" flushCache="true">
+		SELECT ${sequenceName}.nextval FROM dual
+	</select>
+
+	<select id="getSystemDate" resultType="java.util.Date">
+		SELECT sysdate from dual
+	</select>
+
+	<select id="getTablePkColumnName" parameterType="String"
+		resultType="String">
+		select a.column_name columnName
+		from user_cons_columns a, user_constraints b
+		where a.constraint_name = b.constraint_name
+		and b.constraint_type = 'P'
+		and a.table_name = #{tableName}
+	</select>
+
+</mapper>

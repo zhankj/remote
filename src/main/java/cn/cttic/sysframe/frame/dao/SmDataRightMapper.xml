@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmDataRightMapper">
+	<resultMap id="BaseResultMap" type="cn.cttic.sysframe.frame.domain.SmDataRight">
+		<id column="DATA_CODE" property="dataCode" jdbcType="VARCHAR" />
+		<result column="DATA_NAME" property="dataName" jdbcType="VARCHAR" />
+		<result column="PROVINCE_ID" property="provinceId" jdbcType="VARCHAR" />
+		<result column="AREA_ID" property="areaId" jdbcType="VARCHAR" />
+		<result column="COUNTY_ID" property="countyId" jdbcType="VARCHAR" />
+		<result column="MENU_ID" property="menuId" jdbcType="DECIMAL" />
+		<result column="RIGHT_TYPE" property="rightType" jdbcType="DECIMAL" />
+		<result column="CONFIG_AIM" property="configAim" jdbcType="DECIMAL" />
+		<result column="RIGHT_LEVEL" property="rightLevel" jdbcType="VARCHAR" />
+		<result column="RIGHT_STATUS" property="rightStatus" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Example_Where_Clause">
+		<where>
+			<foreach collection="oredCriteria" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Example_Where_Clause">
+		<where>
+			<foreach collection="example.oredCriteria" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" suffix=")" prefixOverrides="and">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach collection="criterion.value" item="listItem"
+										open="(" close=")" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		DATA_CODE, DATA_NAME, PROVINCE_ID, AREA_ID, COUNTY_ID, MENU_ID, RIGHT_TYPE,
+		CONFIG_AIM,
+		RIGHT_LEVEL,RIGHT_STATUS
+	</sql>
+	<sql id="data_right_tree_select">
+		select sd.data_code, sd.data_name, sd.province_id, sd.area_id,
+		sd.county_id,sd.menu_id, sd.right_type, sd.config_aim,
+		sd.right_level,sd.right_status
+		from sm_data_right sd where 1=1 and sd.RIGHT_STATUS='Y'
+	</sql>
+	<sql id="data_right_tree_where">
+		<if test="right_level != null">
+			<if test="right_level == '00'">
+				and sd.province_id='09'
+			</if>
+			<if test="right_level == '01'">
+				and ((sd.province_id='09' and sd.right_level='0')
+				or (sd.province_id=#{province_id} and (sd.area_id is null or
+				sd.area_id='000' )))
+			</if>
+			<if test="right_level == '02'">
+				and ((sd.province_id='09' and sd.right_level='0')
+				or (sd.province_id=#{province_id} and (sd.area_id is null or
+				area_id='000' ) and sd.right_level='0')
+				or (sd.province_id=#{province_id} and sd.area_id=#{area_id} and
+				(sd.county_id is null or sd.county_id='00000')))
+
+			</if>
+			<if test="right_level == '03'">
+				and (
+				(sd.province_id='09' and sd.right_level='0')
+				or (sd.province_id=#{province_id} and (sd.area_id is null or
+				area_id='000' ) and sd.right_level='0')
+				or (sd.province_id=#{province_id} and sd.area_id=#{area_id} and
+				(sd.county_id is null or sd.county_id='00000') and
+				sd.right_level='0')
+				or (sd.province_id=#{province_id} and sd.area_id=#{area_id} and
+				sd.county_id=#{county_id} )
+				)
+
+			</if>
+			<if test="right_level == 0">
+				<if test="province_id !=null and province_id =='09'">
+					and sd.province_id='09'
+				</if>
+				<if test="province_id !=null and province_id !='09'">
+					<if test="area_id ==null">
+						and ((sd.province_id='09' and sd.right_level='0')
+						or (sd.province_id=#{province_id} and (sd.area_id is null or
+						sd.area_id='000' )))
+					</if>
+					<if test="area_id == '000'">
+						and ((sd.province_id='09' and sd.right_level='0')
+						or (sd.province_id=#{province_id} and (sd.area_id is null or
+						sd.area_id='000' )))
+					</if>
+					<if test="area_id !=null and area_id !='000' ">
+						<if test="county_id ==null">
+							and ((sd.province_id='09' and sd.right_level='0')
+							or (sd.province_id=#{province_id} and (sd.area_id is null or
+							area_id='000' ) and sd.right_level='0')
+							or (sd.province_id=#{province_id} and sd.area_id=#{area_id} and
+							(sd.county_id is null or sd.county_id='00000')))
+						</if>
+						<if test="county_id == '00000'">
+							and ((sd.province_id='09' and sd.right_level='0')
+							or (sd.province_id=#{province_id} and (sd.area_id is null or
+							area_id='000' ) and sd.right_level='0')
+							or (sd.province_id=#{province_id} and sd.area_id=#{area_id} and
+							(sd.county_id is null or sd.county_id='00000')))
+						</if>
+						<if test="county_id !=null and county_id !='000' ">
+							and (
+							(sd.province_id='09' and sd.right_level='0')
+							or (sd.province_id=#{province_id} and (sd.area_id is null or
+							area_id='000' ) and sd.right_level='0')
+							or (sd.province_id=#{province_id} and sd.area_id=#{area_id} and
+							(sd.county_id is null or sd.county_id='00000') and
+							sd.right_level='0')
+							or (sd.province_id=#{province_id} and sd.area_id=#{area_id} and
+							sd.county_id=#{county_id} )
+							)
+						</if>
+					</if>
+				</if>
+			</if>
+			<if
+				test="right_level != 0 and right_level!='00' and right_level != '01' and right_level != '02' and right_level != '03'">
+				and 1=2 and sd.province_id=#{right_level}
+			</if>
+		</if>
+		<if test="config_aim == 2">
+			and sd.right_type=1 and sd.config_aim in
+			(2,3)
+		</if>
+		<if test="config_aim == 1">
+			and sd.config_aim in (1,3)
+		</if>
+	</sql>
+	<select id="getDataRightTree" resultMap="BaseResultMap"
+		parameterType="map">
+		<include refid="data_right_tree_select" />
+		<include refid="data_right_tree_where" />
+		order by sd.data_name
+	</select>
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="cn.cttic.sysframe.frame.domain.SmDataRightExample">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from SM_DATA_RIGHT
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from SM_DATA_RIGHT
+		where DATA_CODE = #{dataCode,jdbcType=VARCHAR}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from SM_DATA_RIGHT
+		where DATA_CODE = #{dataCode,jdbcType=VARCHAR}
+	</delete>
+	<delete id="deleteByExample" parameterType="cn.cttic.sysframe.frame.domain.SmDataRightExample">
+		delete from SM_DATA_RIGHT
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</delete>
+	<insert id="insert" parameterType="cn.cttic.sysframe.frame.domain.SmDataRight">
+		insert into SM_DATA_RIGHT (DATA_CODE, DATA_NAME, PROVINCE_ID,
+		AREA_ID, COUNTY_ID, MENU_ID,
+		RIGHT_TYPE, CONFIG_AIM, RIGHT_LEVEL
+		)
+		values (#{dataCode,jdbcType=VARCHAR}, #{dataName,jdbcType=VARCHAR},
+		#{provinceId,jdbcType=VARCHAR},
+		#{areaId,jdbcType=VARCHAR}, #{countyId,jdbcType=VARCHAR}, #{menuId,jdbcType=DECIMAL},
+		#{rightType,jdbcType=DECIMAL}, #{configAim,jdbcType=DECIMAL},
+		#{rightLevel,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="cn.cttic.sysframe.frame.domain.SmDataRight">
+		insert into SM_DATA_RIGHT
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="dataCode != null">
+				DATA_CODE,
+			</if>
+			<if test="dataName != null">
+				DATA_NAME,
+			</if>
+			<if test="provinceId != null">
+				PROVINCE_ID,
+			</if>
+			<if test="areaId != null">
+				AREA_ID,
+			</if>
+			<if test="countyId != null">
+				COUNTY_ID,
+			</if>
+			<if test="menuId != null">
+				MENU_ID,
+			</if>
+			<if test="rightType != null">
+				RIGHT_TYPE,
+			</if>
+			<if test="configAim != null">
+				CONFIG_AIM,
+			</if>
+			<if test="rightLevel != null">
+				RIGHT_LEVEL,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="dataCode != null">
+				#{dataCode,jdbcType=VARCHAR},
+			</if>
+			<if test="dataName != null">
+				#{dataName,jdbcType=VARCHAR},
+			</if>
+			<if test="provinceId != null">
+				#{provinceId,jdbcType=VARCHAR},
+			</if>
+			<if test="areaId != null">
+				#{areaId,jdbcType=VARCHAR},
+			</if>
+			<if test="countyId != null">
+				#{countyId,jdbcType=VARCHAR},
+			</if>
+			<if test="menuId != null">
+				#{menuId,jdbcType=DECIMAL},
+			</if>
+			<if test="rightType != null">
+				#{rightType,jdbcType=DECIMAL},
+			</if>
+			<if test="configAim != null">
+				#{configAim,jdbcType=DECIMAL},
+			</if>
+			<if test="rightLevel != null">
+				#{rightLevel,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<select id="countByExample" parameterType="cn.cttic.sysframe.frame.domain.SmDataRightExample"
+		resultType="java.lang.Integer">
+		select count(*) from SM_DATA_RIGHT
+		<if test="_parameter != null">
+			<include refid="Example_Where_Clause" />
+		</if>
+	</select>
+	<update id="updateByExampleSelective" parameterType="map">
+		update SM_DATA_RIGHT
+		<set>
+			<if test="record.dataCode != null">
+				DATA_CODE = #{record.dataCode,jdbcType=VARCHAR},
+			</if>
+			<if test="record.dataName != null">
+				DATA_NAME = #{record.dataName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.provinceId != null">
+				PROVINCE_ID = #{record.provinceId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.areaId != null">
+				AREA_ID = #{record.areaId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.countyId != null">
+				COUNTY_ID = #{record.countyId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.menuId != null">
+				MENU_ID = #{record.menuId,jdbcType=DECIMAL},
+			</if>
+			<if test="record.rightType != null">
+				RIGHT_TYPE = #{record.rightType,jdbcType=DECIMAL},
+			</if>
+			<if test="record.configAim != null">
+				CONFIG_AIM = #{record.configAim,jdbcType=DECIMAL},
+			</if>
+			<if test="record.rightLevel != null">
+				RIGHT_LEVEL = #{record.rightLevel,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByExample" parameterType="map">
+		update SM_DATA_RIGHT
+		set DATA_CODE = #{record.dataCode,jdbcType=VARCHAR},
+		DATA_NAME = #{record.dataName,jdbcType=VARCHAR},
+		PROVINCE_ID = #{record.provinceId,jdbcType=VARCHAR},
+		AREA_ID = #{record.areaId,jdbcType=VARCHAR},
+		COUNTY_ID = #{record.countyId,jdbcType=VARCHAR},
+		MENU_ID = #{record.menuId,jdbcType=DECIMAL},
+		RIGHT_TYPE = #{record.rightType,jdbcType=DECIMAL},
+		CONFIG_AIM = #{record.configAim,jdbcType=DECIMAL},
+		RIGHT_LEVEL = #{record.rightLevel,jdbcType=VARCHAR}
+		<if test="_parameter != null">
+			<include refid="Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<update id="updateByPrimaryKeySelective" parameterType="cn.cttic.sysframe.frame.domain.SmDataRight">
+		update SM_DATA_RIGHT
+		<set>
+			<if test="dataName != null">
+				DATA_NAME = #{dataName,jdbcType=VARCHAR},
+			</if>
+			<if test="provinceId != null">
+				PROVINCE_ID = #{provinceId,jdbcType=VARCHAR},
+			</if>
+			<if test="areaId != null">
+				AREA_ID = #{areaId,jdbcType=VARCHAR},
+			</if>
+			<if test="countyId != null">
+				COUNTY_ID = #{countyId,jdbcType=VARCHAR},
+			</if>
+			<if test="menuId != null">
+				MENU_ID = #{menuId,jdbcType=DECIMAL},
+			</if>
+			<if test="rightType != null">
+				RIGHT_TYPE = #{rightType,jdbcType=DECIMAL},
+			</if>
+			<if test="configAim != null">
+				CONFIG_AIM = #{configAim,jdbcType=DECIMAL},
+			</if>
+			<if test="rightLevel != null">
+				RIGHT_LEVEL = #{rightLevel,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where DATA_CODE = #{dataCode,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="cn.cttic.sysframe.frame.domain.SmDataRight">
+		update SM_DATA_RIGHT
+		set DATA_NAME = #{dataName,jdbcType=VARCHAR},
+		PROVINCE_ID = #{provinceId,jdbcType=VARCHAR},
+		AREA_ID = #{areaId,jdbcType=VARCHAR},
+		COUNTY_ID = #{countyId,jdbcType=VARCHAR},
+		MENU_ID = #{menuId,jdbcType=DECIMAL},
+		RIGHT_TYPE = #{rightType,jdbcType=DECIMAL},
+		CONFIG_AIM = #{configAim,jdbcType=DECIMAL},
+		RIGHT_LEVEL = #{rightLevel,jdbcType=VARCHAR}
+		where DATA_CODE = #{dataCode,jdbcType=VARCHAR}
+	</update>
+	<select id="commQuery" parameterType="map" resultType="map">
+		<![CDATA[
+			${sysExecSql} 
+		]]>
+	</select>
+	<!-- 自定义sql -->
+	<!--功能集可选数据权限 -->
+	<select id="listSelectDatasForFS" resultType="map"
+		parameterType="map">
+	<![CDATA[
+		SELECT DISTINCT c.DATA_CODE ,b.*
+		FROM SM_DATA_RIGHT c,( ${sqlData} ) b
+		WHERE c.DATA_CODE= #{dataCode}  and c.RIGHT_STATUS='Y'
+	]]>
+		<if test="sqlQry != null and sqlQry!=''">
+			${sqlQry}
+		</if>
+     <![CDATA[
+		AND  b.Id NOT IN (
+			SELECT DISTINCT b.ID
+			FROM SM_FS_2_DATA a,SM_DATA_RIGHT c,( ${sqlData} ) b
+			WHERE  a.DATA_CODE = c.DATA_CODE and c.RIGHT_STATUS='Y' AND a.DATA_VALUE=b.Id 
+			AND a.DATA_CODE=#{dataCode} and a.FS_ID= #{objId}
+	]]>
+		<if test="sqlQry != null and sqlQry!=''">
+			${sqlQry}
+		</if>
+   	<![CDATA[
+	  )
+	]]>
+		<if test="sqlOrder != null">
+			${sqlOrder}
+		</if>
+	</select>
+	<!--功能集已选数据权限 -->
+	<select id="listSelectedDatasForFS" resultType="map"
+		parameterType="map">
+	<![CDATA[
+		SELECT DISTINCT a.DATA_CODE,a.FS_ID ,b.*
+		FROM SM_FS_2_DATA a,SM_DATA_RIGHT c,( ${sqlData}  ) b
+		WHERE  a.DATA_CODE = c.DATA_CODE and c.RIGHT_STATUS='Y' AND a.DATA_VALUE=b.Id 
+		AND a.DATA_CODE=#{dataCode} and a.FS_ID=#{objId}
+	]]>
+		<if test="sqlQry != null and sqlQry!=''">
+			${sqlQry}
+		</if>
+		<if test="sqlOrder != null">
+			${sqlOrder}
+		</if>
+	</select>
+	<!--根据用户标识获取用户权限 -->
+	<select id="getDataRightByOperId" resultType="map"
+		parameterType="java.lang.String">
+	<![CDATA[
+		select distinct sd2.*
+		from sm_oper_2_role so2,sm_role sr1,sm_role_2_fs sr2,sm_func_set sf1,sm_fs_2_data sd2,sm_data_right sd1
+		where so2.role_id=sr1.role_id and sr1.state='Y'
+		and sr1.role_id=sr2.role_id and sr2.fs_id=sf1.fs_id and sf1.state='Y'
+		and sf1.fs_id=sd2.fs_id and sd2.data_code=sd1.data_code and sd1.right_status='Y'  
+		and so2.oper_id=#{operId}
+		order by sd2.data_code,sd2.data_value 
+	]]>
+	</select>
+</mapper>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- MySQL driver.jar 
+	<classPathEntry location="C:/Users/dong/.m2/repository/mysql/mysql-connector-java/5.1.26/mysql-connector-java-5.1.26.jar"/> -->
+	<!-- Oracle driver.jar-->
+
+	<context id="DatabaseTables" targetRuntime="MyBatis3">
+		<!--  替换Example类名
+		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Criteria" />
+		</plugin>
+		-->
+		<!-- 当设置为false时，会对每个mapper的元素产生时间戳，便于合并代码 -->
+		<!-- 当设置为true时，剔除了时间戳，不能合并代码，在重新生成时，xml文件会被追加生成 -->
+		<!-- 此处设置为false -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<!-- MySQL datalink --> 
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+			connectionURL="jdbc:mysql://localhost:3306/test" userId="root" password="root"> 
+		</jdbcConnection> 
+		
+		<!-- Oracle datalink 
+		<jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@10.0.0.42:1521:orcl" userId="APPROVAL" password="APPROVAL">
+		</jdbcConnection>
+		-->
+		<javaTypeResolver>  
+            <property name="forceBigDecimals" value="false" />  
+        </javaTypeResolver>  
+  
+
+		<javaModelGenerator targetPackage="cn.cttic.icar.domain"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="cn.cttic.icar.dao"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+  
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.cttic.icar.dao" targetProject="src\main\java">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+	
+	 
+	    <table tableName="USERS" domainObjectName="Users">
+	      <property name="useActualColumnNames" value="false" />
+	    </table>
+	    
+		</context>
+</generatorConfiguration>

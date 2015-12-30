@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.cttic.sysframe.frame.dao.SmOper2DataMapper">
+	<select id="getSimpleDataRight1" parameterType="map" resultType="map">
+		select distinct DATA_CODE,DATA_NAME from (
+		select f2d.data_code as
+		DATA_CODE,sd.data_name as DATA_NAME
+		from sm_role sr1,sm_role_2_fs
+		r2f,sm_func_set sf,sm_fs_2_data f2d,sm_data_right sd,sm_oper_2_role
+		o2r
+		where sr1.role_id=o2r.role_id and sr1.state='Y' and
+		sr1.role_id=r2f.role_id
+		and r2f.fs_id=sf.fs_id and sf.state='Y' and
+		sf.fs_id=f2d.fs_id
+		and f2d.data_code=sd.data_code
+		and o2r.oper_id=#{operId}
+		union
+		select sd.data_code as
+		DATA_CODE,sd.data_name as DATA_NAME
+		from sm_data_right
+		sd,sm_oper_2_data o2d
+		where o2d.data_code=sd.data_code
+		and
+		o2d.oper_id=#{operId}
+		)
+	</select>
+	<select id="getSimpleDataRight2" parameterType="map" resultType="map">
+		select distinct DATA_CODE,DATA_NAME,DATA_VALUE from (
+		select
+		f2d.data_code as DATA_CODE,sd.data_name as DATA_NAME,f2d.data_value as
+		DATA_VALUE
+		from sm_role sr1,sm_role_2_fs r2f,sm_func_set
+		sf,sm_fs_2_data f2d,sm_data_right sd,sm_oper_2_role o2r
+		where
+		sr1.role_id=o2r.role_id and sr1.state='Y' and sr1.role_id=r2f.role_id
+		and r2f.fs_id=sf.fs_id and sf.state='Y' and sf.fs_id=f2d.fs_id
+		and f2d.data_code=sd.data_code
+		and o2r.oper_id=#{operId}
+		union
+		select sd.data_code as
+		DATA_CODE,sd.data_name as DATA_NAME,o2d.data_value as DATA_VALUE
+		from
+		sm_data_right sd,sm_oper_2_data o2d
+		where o2d.data_code=sd.data_code
+		and o2d.oper_id=#{operId}
+		)
+	</select>
+	<select id="getDataRightByDataCode" parameterType="map"
+		resultType="map">
+		select distinct DATA_CODE,DATA_NAME,DATA_VALUE from (
+		select f2d.data_code as
+		DATA_CODE,sd.data_name as DATA_NAME,f2d.data_value as DATA_VALUE
+		from
+		sm_role sr1,sm_role_2_fs r2f,sm_func_set sf,sm_fs_2_data
+		f2d,sm_data_right sd,sm_oper_2_role o2r
+		where sr1.role_id=o2r.role_id
+		and sr1.state='Y' and sr1.role_id=r2f.role_id
+		and r2f.fs_id=sf.fs_id
+		and sf.state='Y' and sf.fs_id=f2d.fs_id
+		and f2d.data_code=sd.data_code
+		and sd.data_code=#{dataCode}
+		and o2r.oper_id=#{operId}
+		union
+		select
+		sd.data_code as DATA_CODE,sd.data_name as DATA_NAME,o2d.data_value as
+		DATA_VALUE
+		from sm_data_right sd,sm_oper_2_data o2d
+		where
+		o2d.data_code=sd.data_code
+		and sd.data_code=#{dataCode}
+		and
+		o2d.oper_id=#{operId}
+		)
+	</select>
+</mapper>
